@@ -1,2 +1,3 @@
-./data/raw
-./data/preprocessed
+data/raw/
+data/preprocessed/
+
