@@ -1,19 +1,94 @@
 import os
+import shutil
+import random
+from tqdm import tqdm
 from PIL import Image
+
+
+# ============================
+#  CONFIG
+# ============================
+DATASET_ROOT = "folder_patches/train"  # dossier avec HR/ et LR/
+OUTPUT_ROOT = "folder_patches_split"  # dossier final
+
+train_ratio = 0.80
+val_ratio   = 0.10
+test_ratio  = 0.10
+
+# ============================
+#  CRÉATION DES DOSSIERS
+# ============================
+splits = ["train", "val", "test"]
+subfolders = ["HR", "LR"]
+
+for split in splits:
+    for sub in subfolders:
+        os.makedirs(os.path.join(OUTPUT_ROOT, split, sub), exist_ok=True)
+
+# ============================
+#  LISTE DES IMAGES HR
+# ============================
+hr_files = sorted(os.listdir(os.path.join(DATASET_ROOT, "HR")))
+random.shuffle(hr_files)  # mélanger le dataset
+
+n = len(hr_files)
+print(f"Total patches HR trouvés: {n}")
+
+# ============================
+#  CALCUL DES SPLITS
+# ============================
+train_end = int(n * train_ratio)
+val_end   = train_end + int(n * val_ratio)
+
+train_files = hr_files[:train_end]
+val_files   = hr_files[train_end:val_end]
+test_files  = hr_files[val_end:]
+
+print(f"Train: {len(train_files)} images")
+print(f"Val:   {len(val_files)} images")
+print(f"Test:  {len(test_files)} images")
+
+# ============================
+#  FONCTION POUR COPIER HR+LR
+# ============================
+def copy_files(file_list, split_name):
+    hr_src = os.path.join(DATASET_ROOT, "HR")
+    lr_src = os.path.join(DATASET_ROOT, "LR")
+
+    hr_dst = os.path.join(OUTPUT_ROOT, split_name, "HR")
+    lr_dst = os.path.join(OUTPUT_ROOT, split_name, "LR")
+
+    for fname in tqdm(file_list, desc=f"Copying {split_name}"):
+        shutil.copy(os.path.join(hr_src, fname), os.path.join(hr_dst, fname))
+        shutil.copy(os.path.join(lr_src, fname), os.path.join(lr_dst, fname))
+
+# ============================
+#  COPIE DES FICHIERS
+# ============================
+copy_files(train_files, "train")
+copy_files(val_files, "val")
+copy_files(test_files, "test")
+
+print("\nSplit terminé ! 🎉")
+
+
+
+
+
 
 # ====== CONFIG ======
 SCALE = 4
 
 GRID = 15                    # 13x13 patches
-HR_PATCH = 228               # taille patch HR (multiple de 4)
+HR_PATCH = 224               # taille patch HR (multiple de 4)
 LR_PATCH = HR_PATCH // SCALE # = 57
 
 HR_CROP = HR_PATCH * GRID    # 2964
 LR_CROP = LR_PATCH * GRID    # 741
 
 # Chemins à adapter selon ton dataset
-ROOT = r"data/raw"             # dossier où il y a train_HR, train_LR, etc.
-OUT_ROOT = r"data/preprocessed"
+ROOT = r"dataset_original"             # dossier où il y a train_HR, train_LR, etc.
+OUT_ROOT = r"dataset_patches"
 
 os.makedirs(os.path.join(OUT_ROOT, "train", "HR"), exist_ok=True)
 os.makedirs(os.path.join(OUT_ROOT, "train", "LR"), exist_ok=True)
