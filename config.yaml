@@ -1,0 +1,17 @@
+# ========== SUPER-RESOLUTION CONFIG ==========
+
+paths:
+  raw_data: "data/raw"               # dossier contenant HR/ et LR/
+  output_root: "data/preprocessed"   # dossier final après split + patching
+
+dataset:
+  scale: 4
+  grid: 15
+  hr_patch: 192          # taille patch HR
+  lr_patch: 48           # sera recalculé automatiquement si tu veux
+  train_ratio: 0.80
+  val_ratio: 0.10
+  test_ratio: 0.10
+
+# optionnel : seed pour reproductibilité
+random_seed: 42
