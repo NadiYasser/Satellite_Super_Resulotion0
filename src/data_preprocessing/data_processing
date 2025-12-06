@@ -1,0 +1,96 @@
+import os
+from PIL import Image
+
+# ====== CONFIG ======
+SCALE = 4
+
+GRID = 13                    # 13x13 patches
+HR_PATCH = 228               # taille patch HR (multiple de 4)
+LR_PATCH = HR_PATCH // SCALE # = 57
+
+HR_CROP = HR_PATCH * GRID    # 2964
+LR_CROP = LR_PATCH * GRID    # 741
+
+# Chemins à adapter selon ton dataset
+ROOT = r"data/raw"             # dossier où il y a train_HR, train_LR, etc.
+OUT_ROOT = r"data/preprocessed"
+
+os.makedirs(os.path.join(OUT_ROOT, "train", "HR"), exist_ok=True)
+os.makedirs(os.path.join(OUT_ROOT, "train", "LR"), exist_ok=True)
+os.makedirs(os.path.join(OUT_ROOT, "test", "HR"), exist_ok=True)
+os.makedirs(os.path.join(OUT_ROOT, "test", "LR"), exist_ok=True)
+
+
+def center_crop(img, target_size):
+    """Crop carré centré de taille target_size x target_size"""
+    w, h = img.size
+    left = (w - target_size) // 2
+    top = (h - target_size) // 2
+    right = left + target_size
+    bottom = top + target_size
+    return img.crop((left, top, right, bottom))
+
+
+def process_split(split_name):
+    hr_dir = os.path.join(ROOT, f"{split_name}_HR")
+    lr_dir = os.path.join(ROOT, f"{split_name}_LR")
+
+    out_hr_dir = os.path.join(OUT_ROOT, split_name, "HR")
+    out_lr_dir = os.path.join(OUT_ROOT, split_name, "LR")
+
+    img_names = sorted(os.listdir(hr_dir))
+
+    for img_name in img_names:
+        if not img_name.lower().endswith((".png", ".jpg", ".jpeg", ".tif", ".tiff")):
+            continue
+
+        hr_path = os.path.join(hr_dir, img_name)
+        lr_path = os.path.join(lr_dir, img_name)
+
+        if not os.path.exists(lr_path):
+            print(f"[WARN] LR image missing for {img_name}, skipping")
+            continue
+
+        # --- Load images ---
+        hr = Image.open(hr_path)
+        lr = Image.open(lr_path)
+
+        # Convert to RGB if needed
+        if hr.mode != "RGB":
+            hr = hr.convert("RGB")
+        if lr.mode != "RGB":
+            lr = lr.convert("RGB")
+
+        # --- Center crop -> exact multiple of patches ---
+        hr = center_crop(hr, HR_CROP)  # 2964x2964
+        lr = center_crop(lr, LR_CROP)  # 741x741
+
+        base_name = os.path.splitext(img_name)[0]
+
+        patch_id = 0
+        for i in range(GRID):
+            for j in range(GRID):
+                # HR patch
+                xh = j * HR_PATCH
+                yh = i * HR_PATCH
+                hr_patch = hr.crop((xh, yh, xh + HR_PATCH, yh + HR_PATCH))
+
+                # LR patch
+                xl = j * LR_PATCH
+                yl = i * LR_PATCH
+                lr_patch = lr.crop((xl, yl, xl + LR_PATCH, yl + LR_PATCH))
+
+                patch_name = f"{base_name}_r{i:02d}_c{j:02d}.png"
+
+                hr_patch.save(os.path.join(out_hr_dir, patch_name))
+                lr_patch.save(os.path.join(out_lr_dir, patch_name))
+
+                patch_id += 1
+
+        # print(f"[INFO] {split_name} | {img_name} -> {patch_id} patches")
+
+
+if __name__ == "__main__":
+    process_split("train")
+    process_split("test")
+    print("✅ Done generating patches.")
