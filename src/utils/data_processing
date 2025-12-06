@@ -4,7 +4,7 @@ from PIL import Image
 # ====== CONFIG ======
 SCALE = 4
 
-GRID = 13                    # 13x13 patches
+GRID = 15                    # 13x13 patches
 HR_PATCH = 228               # taille patch HR (multiple de 4)
 LR_PATCH = HR_PATCH // SCALE # = 57
 
