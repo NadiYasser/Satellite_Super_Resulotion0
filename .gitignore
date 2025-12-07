@@ -1,7 +1,4 @@
-# data/raw/
+data/raw/
 data/preprocessed/
 
-
-
-data/raw/HR/*
-data/raw/LR/*
+src/models/checkpoints
