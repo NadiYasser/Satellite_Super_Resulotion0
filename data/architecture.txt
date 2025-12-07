@@ -1,2 +1,23 @@
-data/raw/HR_0.5m/HR_0.5m/*
-data/raw/LR_0.5m/LR_0.5m/*
+data/
+    raw/
+        HR/
+            *.tif
+        LR/
+            *.tif
+    preprocessed/
+        test/
+            HR/
+            *.tif
+            LR/
+            *.tif
+        train/
+            HR/
+            *.tif
+            LR/
+            *.tif
+        val/
+            HR/
+            *.tif
+            LR/
+            *.tif
+    
