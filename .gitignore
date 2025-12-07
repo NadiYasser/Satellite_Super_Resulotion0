@@ -1,6 +1,6 @@
 # data/raw/
 data/preprocessed/
-
+src/utils/__pycache__
 
 
 data/raw/HR/*
