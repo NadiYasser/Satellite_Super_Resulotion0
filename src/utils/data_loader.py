@@ -6,10 +6,7 @@ from torch.utils.data import Dataset, DataLoader
 import torchvision.transforms as T
 import torchvision.transforms.functional as TF
 
-
-# ============================================================
-#                 DATASET SANS AUGMENTATION
-# ============================================================
+# DATASET SANS AUGMENTATION
 
 class SRDataset(Dataset):
     """
@@ -39,9 +36,9 @@ class SRDataset(Dataset):
         return self.to_tensor(lr), self.to_tensor(hr)
 
 
-# ============================================================
-#               DATASET AVEC AUGMENTATION
-# ============================================================
+
+# DATASET AVEC AUGMENTATION
+
 
 class SRDatasetAug(Dataset):
     """
@@ -83,9 +80,8 @@ class SRDatasetAug(Dataset):
         return self.to_tensor(lr), self.to_tensor(hr)
 
 
-# ============================================================
-#               FONCTION GLOBALE: CREATE LOADERS
-# ============================================================
+# FONCTION GLOBALE: CREATE LOADERS
+
 
 def create_loaders(
         root,

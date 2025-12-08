@@ -1,4 +1,10 @@
 data/raw/
 data/preprocessed/
 
-src/models/checkpoints
+
+notebooks
+
+
+src/utils/__pycache__
+src/models/checkpoints 
+src/models/__pycache__

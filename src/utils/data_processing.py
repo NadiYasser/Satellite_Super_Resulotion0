@@ -7,9 +7,8 @@ import yaml
 
 
 
-# ============================
+
 # LOAD CONFIG FROM config.yaml
-# ============================
 
 with open("config.yaml", "r") as f:
     cfg = yaml.safe_load(f)
@@ -40,9 +39,9 @@ print(f"HR_CROP: {HR_CROP}  | LR_CROP: {LR_CROP}")
 
 
 
-# ============================
+
 #  CRÉATION DES DOSSIERS
-# ============================
+
 splits = ["train", "val", "test"]
 subfolders = ["HR", "LR"]
 
@@ -50,9 +49,9 @@ for split in splits:
     for sub in subfolders:
         os.makedirs(os.path.join(OUTPUT_ROOT, split, sub), exist_ok=True)
 
-# ============================
+
 #  FONCTION CROP CENTRÉE
-# ============================
+
 def center_crop(img, target_size):
     w, h = img.size
     left = (w - target_size) // 2
@@ -61,9 +60,9 @@ def center_crop(img, target_size):
     bottom = top + target_size
     return img.crop((left, top, right, bottom))
 
-# ============================
+
 #  SPLIT DU DATASET RAW
-# ============================
+
 hr_files = sorted(os.listdir(os.path.join(RAW_DATA, "HR")))
 random.shuffle(hr_files)
 
@@ -81,9 +80,9 @@ print(f"Train: {len(train_files)} images")
 print(f"Val:   {len(val_files)} images")
 print(f"Test:  {len(test_files)} images")
 
-# ============================
+
 #  FONCTION PATCHING
-# ============================
+
 def process_files(file_list, split_name):
     hr_src = os.path.join(RAW_DATA, "HR")
     lr_src = os.path.join(RAW_DATA, "LR")
@@ -97,7 +96,7 @@ def process_files(file_list, split_name):
         lr_path = os.path.join(lr_src, img_name)
 
         if not os.path.exists(lr_path):
-            print(f"⚠️ LR missing for {img_name}, skipped")
+            print(f" LR missing for {img_name}, skipped")
             continue
 
         hr = Image.open(hr_path).convert("RGB")
@@ -127,11 +126,10 @@ def process_files(file_list, split_name):
                 hr_patch.save(os.path.join(out_hr_dir,    patch_name))
                 lr_patch.save(os.path.join(out_lr_dir,    patch_name))
 
-# ============================
+
 #  APPLY SPLIT + PATCHING
-# ============================
 process_files(train_files, "train")
 process_files(val_files,   "val")
 process_files(test_files,  "test")
 
-print("\n🎉 DONE! Patches created in data/preprocessed/")
+print("\n DONE! Patches created in data/preprocessed/")
