@@ -80,7 +80,6 @@ class SRDatasetAug(Dataset):
         return self.to_tensor(lr), self.to_tensor(hr)
 
 
-# FONCTION GLOBALE: CREATE LOADERS
 
 
 def create_loaders(
@@ -93,7 +92,7 @@ def create_loaders(
     Retourne train_loader, val_loader, test_loader
     """
 
-    # ---- Choose Train Dataset Type ----
+    # Choose Train Dataset Type
     if use_augmentation:
         train_set = SRDatasetAug(root, split="train")
     else:
@@ -102,7 +101,7 @@ def create_loaders(
     val_set = SRDataset(root, split="val")
     test_set = SRDataset(root, split="test")
 
-    # ---- DataLoaders ----
+    # DataLoaders 
     train_loader = DataLoader(
         train_set,
         batch_size=batch_size,
@@ -130,7 +129,7 @@ def create_loaders(
         persistent_workers=num_workers > 0
     )
 
-    print(f"\n📦 DATA LOADED:")
+    print(f"\n DATA LOADED:")
     print(f"  Train: {len(train_set)} samples")
     print(f"  Val:   {len(val_set)} samples")
     print(f"  Test:  {len(test_set)} samples")

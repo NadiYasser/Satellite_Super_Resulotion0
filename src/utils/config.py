@@ -15,3 +15,4 @@ def load_config(filename="config.yaml"):
         return yaml.safe_load(f)
 
 CONFIG = load_config()
+

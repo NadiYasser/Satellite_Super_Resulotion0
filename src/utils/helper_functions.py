@@ -2,11 +2,12 @@ from tqdm import tqdm
 import math
 import torch.nn.functional as F
 import torch
-import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt 
+from torch.cuda.amp import autocast, GradScaler
 
-# ============================================================
-#                     PSNR FUNCTION
-# ============================================================
+
+# PSNR FUNCTION
+
 
 def calc_psnr(sr, hr):
     """
@@ -18,92 +19,103 @@ def calc_psnr(sr, hr):
     return 10 * math.log10(1.0 / mse.item())
 
 
-# ============================================================
-#                    TRAINING FUNCTION
-# ============================================================
 
-def train_sr(model, train_loader, loss_fn, optimizer, device, scheduler=None):
+
+
+
+# TRAIN (avec AMP )
+def train_sr(model, train_loader, loss_fn, optimizer, device,
+            scale_factor=4, model_requires_upscale=False,
+            scheduler=None, use_amp=False, scaler=None):
+
     model.train()
     epoch_loss = 0.0
     epoch_psnr = 0.0
 
-    # Add tqdm progress bar
+    if use_amp and scaler is None:
+        scaler = GradScaler()
+
     pbar = tqdm(train_loader, desc="Training", leave=False)
 
     for lr, hr in pbar:
-        lr = lr.to(device)
-        hr = hr.to(device)
+        lr = lr.to(device, non_blocking=True)
+        hr = hr.to(device, non_blocking=True)
 
-        # Upscale LR → HR size (x4)
-        lr_up = F.interpolate(lr, scale_factor=4, mode="bicubic", align_corners=False)
-
-        # Forward
-        sr = model(lr_up)
-
-        # Loss
-        loss = loss_fn(sr, hr)
+        # Préparation entrée modèle
+        if model_requires_upscale:
+            lr_in = F.interpolate(lr, scale_factor=scale_factor,
+                                mode="bicubic", align_corners=False)
+        else:
+            lr_in = lr
 
         optimizer.zero_grad()
-        loss.backward()
-        optimizer.step()
 
-        batch_psnr = calc_psnr(sr, hr)
+        if use_amp:
+            with autocast():
+                sr = model(lr_in)
+                loss = loss_fn(sr, hr)
+            scaler.scale(loss).backward()
+            scaler.step(optimizer)
+            scaler.update()
+        else:
+            sr = model(lr_in)
+            loss = loss_fn(sr, hr)
+            loss.backward()
+            optimizer.step()
+
+        batch_psnr = calc_psnr(sr.detach(), hr)
 
         epoch_loss += loss.item()
         epoch_psnr += batch_psnr
 
-        # tqdm live update
-        pbar.set_postfix({
-            "loss": loss.item(),
-            "psnr": batch_psnr
-        })
+        pbar.set_postfix({"loss": loss.item(), "psnr": batch_psnr})
 
-    # Scheduler step per epoch
     if scheduler is not None:
         scheduler.step()
 
-    return epoch_loss / len(train_loader), epoch_psnr / len(train_loader)
+    return epoch_loss / len(train_loader), epoch_psnr / len(train_loader), scaler
 
 
-# ============================================================
-#                    TEST FUNCTION
-# ============================================================
+
+
+# TEST FUNCTION
+
 
 @torch.no_grad()
-def test_sr(model, test_loader, loss_fn, device):
+def val_sr(model, val_loader, loss_fn, device, 
+            scale_factor=4, model_requires_upscale=True):
+
     model.eval()
     epoch_loss = 0.0
     epoch_psnr = 0.0
-
-    pbar = tqdm(test_loader, desc="Testing", leave=False)
+    pbar = tqdm(val_loader, desc="Validation", leave=False)
 
     for lr, hr in pbar:
         lr = lr.to(device)
         hr = hr.to(device)
 
-        lr_up = F.interpolate(lr, scale_factor=4, mode="bicubic", align_corners=False)
+        if model_requires_upscale:
+            lr_in = F.interpolate(lr, scale_factor=scale_factor, mode="bicubic", align_corners=False)
+        else:
+            lr_in = lr  
 
-        sr = model(lr_up)
+        sr = model(lr_in)
         loss = loss_fn(sr, hr)
-
         batch_psnr = calc_psnr(sr, hr)
 
         epoch_loss += loss.item()
         epoch_psnr += batch_psnr
 
-        pbar.set_postfix({
-            "loss": loss.item(),
-            "psnr": batch_psnr
-        })
+        pbar.set_postfix({"loss": loss.item(), "psnr": batch_psnr})
 
-    return epoch_loss / len(test_loader), epoch_psnr / len(test_loader)
+    return epoch_loss / len(val_loader), epoch_psnr / len(val_loader)
 
 
-# ============================================================
-#                    PLOT FUNCTION
-# ============================================================
 
-def plot_sr_progress(train_loss, test_loss, train_psnr, test_psnr):
+# PLOT FUNCTION
+
+
+def plot_sr_progress(train_loss, val_loss, train_psnr, val_psnr):
     """
     Plot training curves for Super-Resolution:
     - Loss per epoch
@@ -111,20 +123,20 @@ def plot_sr_progress(train_loss, test_loss, train_psnr, test_psnr):
     """
     plt.figure(figsize=(12, 4))
     
-    # ===== Loss =====
+    # Loss 
     plt.subplot(1, 2, 1)
     plt.plot(train_loss, c='r', label="Train Loss")
-    plt.plot(test_loss, c='b', label="Test Loss")
+    plt.plot(val_loss, c='b', label="Val Loss")
     plt.title("Loss per Epoch")
     plt.xlabel("Epoch")
     plt.ylabel("Loss (MSE)")
     plt.legend()
     plt.grid(True)
     
-    # ===== PSNR =====
+    # PSNR
     plt.subplot(1, 2, 2)
     plt.plot(train_psnr, c='r', label="Train PSNR")
-    plt.plot(test_psnr, c='b', label="Test PSNR")
+    plt.plot(val_psnr, c='b', label="Val PSNR")
     plt.title("PSNR per Epoch")
     plt.xlabel("Epoch")
     plt.ylabel("PSNR (dB)")
