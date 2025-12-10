@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 data/raw/HR/*
 data/raw/LR/*
 data/preprocessed/
@@ -7,13 +6,3 @@ src/models/__pycache__
 src/utils/__pycache__
 src/models/checkpoints 
 
-=======
-data/raw/HR/*
-data/raw/LR/*
-data/preprocessed/
-
-src/models/__pycache__
-src/utils/__pycache__
-src/models/checkpoints 
-
->>>>>>> origin/said
