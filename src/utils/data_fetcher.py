@@ -79,6 +79,8 @@ class SRDatasetAug(Dataset):
         angle = random.choice([0, 90, 180, 270])
         hr = TF.rotate(hr, angle)
         lr = TF.rotate(lr, angle)
+        
+        
 
         return self.to_tensor(lr), self.to_tensor(hr)
 
