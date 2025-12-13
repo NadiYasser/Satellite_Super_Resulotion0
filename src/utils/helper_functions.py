@@ -3,7 +3,7 @@ import math
 import torch.nn.functional as F
 import torch
 import matplotlib.pyplot as plt 
-from torch.cuda.amp import autocast, GradScaler
+from torch.amp import autocast, GradScaler
 
 
 # PSNR FUNCTION
@@ -17,7 +17,6 @@ def calc_psnr(sr, hr):
     if mse == 0:
         return 100
     return 10 * math.log10(1.0 / mse.item())
-
 
 
 
@@ -51,7 +50,7 @@ def train_sr(model, train_loader, loss_fn, optimizer, device,
         optimizer.zero_grad()
 
         if use_amp:
-            with autocast():
+            with autocast(device_type="cuda"):
                 sr = model(lr_in)
                 loss = loss_fn(sr, hr)
             scaler.scale(loss).backward()

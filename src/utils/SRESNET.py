@@ -32,6 +32,15 @@ class SubPixelConvBlock(nn.Module):
 
 
 class SRResNet(nn.Module):
+    """
+    n_residual_Blocks is the number of of block inside the reisdual fase 
+    upscale_factor = the ratio between the input and the output image
+    channels is standard 64 used in the paper we are using 
+    """
+    
+    
+    
+    
     def __init__(self,n_residual_blocks:int=16,upscal_factor:int=4,channels=64,):
         super(SRResNet,self).__init__()
         self.initial = nn.Sequential(
