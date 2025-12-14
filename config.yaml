@@ -33,4 +33,5 @@ training:
 
 model:
   best_SRCNN_path: "src/models/checkpoints/best_srcnn.pth"  
-  best_EDSR_path: "src/models/checkpoints/best_EDSR.pth"
+  best_EDSR_path: "src/models/checkpoints/EDSR/best_EDSR.pth"
+  history_path: "src/models/checkpoints/EDSR/edsr_training_history.json"
