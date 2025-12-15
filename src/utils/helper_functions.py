@@ -72,8 +72,14 @@ def train_sr(model, train_loader, loss_fn, optimizer, device,
 
     if scheduler is not None:
         scheduler.step()
+    
+    if use_amp:
+        return epoch_loss / len(train_loader), epoch_psnr / len(train_loader), scaler
+    else:
+        return epoch_loss / len(train_loader), epoch_psnr / len(train_loader)
+    
+    
 
-    return epoch_loss / len(train_loader), epoch_psnr / len(train_loader), scaler
 
 
 
