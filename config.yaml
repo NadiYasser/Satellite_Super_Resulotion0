@@ -39,4 +39,8 @@ model:
 
 history:
   SRESNET_history : "src/models/srresnet_history.json"
+<<<<<<< HEAD
   EDSR_history_path :""
+=======
+  
+>>>>>>> c19663f1bfd315fb733e78b199abe7641eb7e979

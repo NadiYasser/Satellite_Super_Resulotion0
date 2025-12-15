@@ -4,7 +4,7 @@ import torch.optim as optim
 import os
 from utils.config import CONFIG
 from utils.data_loader import create_loaders
-from models.models_architecture import SRCNN        
+from utils.models_architecture import SRCNN        
 from utils.helper_functions import train_sr, test_sr, plot_sr_progress
 
 device = "cuda" if torch.cuda.is_available() else "cpu"
