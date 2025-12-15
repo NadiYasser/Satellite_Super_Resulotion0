@@ -32,10 +32,11 @@ training:
 
 
 model:
-  best_SRCNN_path: "src/models/checkpoints/best_srcnn.pth"  
-  best_EDSR_path: "src/models/checkpoints/best_EDSR.pth"
+  best_SRCNN_path: "src/models/checkpoints/SRCNN/best_srcnn.pth"  
+  best_EDSR_path: "src/models/checkpoints/EDSR/best_EDSR.pth"
   best_SRESNET_path: "src/models/checkpoints/best_SRESNET.pth"
 
 
 history:
   SRESNET_history : "src/models/srresnet_history.json"
+  EDSR_history_path :""
