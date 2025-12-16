@@ -1,3 +1,4 @@
+
 import os 
 import json
 import torch 
@@ -19,6 +20,7 @@ def train_model_sr(
     model_requires_upscale,
     best_model_path,
     history_path,
+    mode="resume",        
     use_amp=False,
     scaler=None
 ):
@@ -30,24 +32,38 @@ def train_model_sr(
     best_psnr = 0.0
     start_epoch = 0
 
-    # LOAD CHECKPOINT
-    if os.path.exists(best_model_path):
-        print("Loading checkpoint:", best_model_path)
+    # ================= LOAD CHECKPOINT =================
+    if mode in ["resume", "finetune"] and os.path.exists(best_model_path):
+        print(f"Loading checkpoint ({mode}):", best_model_path)
         checkpoint = torch.load(best_model_path, map_location=device)
 
         if isinstance(checkpoint, dict) and "model" in checkpoint:
+            # 1) Toujours charger les poids
             model.load_state_dict(checkpoint["model"])
-            optimizer.load_state_dict(checkpoint["optimizer"])
-            scheduler.load_state_dict(checkpoint["scheduler"])
-            best_psnr = checkpoint["best_psnr"]
-            start_epoch = checkpoint["epoch"] + 1
-            print(f" Resume from epoch {start_epoch} | Best PSNR = {best_psnr:.2f}")
+
+            # 2) Reprise exacte
+            if mode == "resume":
+                if "optimizer" in checkpoint:
+                    optimizer.load_state_dict(checkpoint["optimizer"])
+                if scheduler is not None and "scheduler" in checkpoint:
+                    scheduler.load_state_dict(checkpoint["scheduler"])
+                best_psnr = checkpoint["best_psnr"]
+                start_epoch = checkpoint["epoch"] + 1
+                print(f" Resume from epoch {start_epoch} | Best PSNR = {best_psnr:.2f}")
+
+            # 3) Fine-tuning
+            elif mode == "finetune":
+                best_psnr = checkpoint["best_psnr"]
+                start_epoch = checkpoint["epoch"] + 1
+                print(f" Fine-tuning epoch {start_epoch} | Best PSNR = {best_psnr:.2f}")
+
         else:
             print(" Old checkpoint without optimizer/scheduler. Loading model only.")
             model.load_state_dict(checkpoint)
 
     else:
         print(f" Training {model_name} from scratch")
+
 
     # LOAD HISTORY
     train_losses, val_losses = [], []
@@ -71,7 +87,7 @@ def train_model_sr(
     for epoch in range(start_epoch, num_epochs):
         print(f"\n [{model_name}] Epoch {epoch+1}/{num_epochs}")
 
-        # ---- TRAIN ----
+        # TRAIN
         if use_amp:
             train_loss, train_psnr, scaler = train_sr(
                 model=model,
@@ -98,7 +114,7 @@ def train_model_sr(
                 use_amp=False
             )
 
-        # ---- VALIDATION ----
+        # VALIDATION
         val_loss, val_psnr = val_sr(
             model=model,
             val_loader=val_loader,
@@ -108,20 +124,25 @@ def train_model_sr(
             model_requires_upscale=model_requires_upscale
         )
 
-        # ---- SAVE BEST MODEL ----
+        # SAVE BEST MODEL
         if val_psnr > best_psnr:
             best_psnr = val_psnr
-            torch.save({
+            checkpoint = {
                 "model": model.state_dict(),
                 "optimizer": optimizer.state_dict(),
-                "scheduler": scheduler.state_dict(),
                 "epoch": epoch,
                 "best_psnr": best_psnr
-            }, best_model_path)
+            }
+
+            # Sauver le scheduler seulement s’il existe
+            if scheduler is not None:
+                checkpoint["scheduler"] = scheduler.state_dict()
+
+            torch.save(checkpoint, best_model_path)
 
             print(f" New BEST model saved at epoch {epoch+1} with PSNR = {best_psnr:.2f}")
 
-        # ---- SAVE HISTORY ----
+        # SAVE HISTORY
         train_losses.append(train_loss)
         val_losses.append(val_loss)
         train_psnrs.append(train_psnr)
@@ -144,3 +165,5 @@ def train_model_sr(
     plot_sr_progress(train_losses, val_losses, train_psnrs, val_psnrs)
 
     return 0
+
+
