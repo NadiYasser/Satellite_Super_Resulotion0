@@ -7,9 +7,9 @@ paths:
 
 dataset:
   scale: 4
-  grid: 15
-  hr_patch: 192          # taille patch HR
-  lr_patch: 48           # sera recalculé automatiquement si tu veux
+  grid: 23
+  hr_patch: 128          # taille patch HR
+  lr_patch: 32           # sera recalculé automatiquement si tu veux
   train_ratio: 0.80
   val_ratio: 0.10
   test_ratio: 0.10
@@ -21,7 +21,7 @@ random_seed: 42
 training:
   batch_size: 64
   num_workers: 8
-  epochs: 10
+  epochs: 1
   lr: 0.0001
   weight_decay: 0.0
   scheduler_step_size: 20   # StepLR: tous les 20 epochs
@@ -33,13 +33,18 @@ training:
 
 model:
   best_SRCNN_path: "src/models/checkpoints/SRCNN/best_srcnn.pth"  
+  last_SRCNN_path: "src/models/checkpoints/SRCNN/last_srcnn.pth"
 
   best_EDSR_path: "src/models/checkpoints/EDSR/best_EDSR.pth"
+  last_EDSR_path: "src/models/checkpoints/EDSR/last_EDSR.pth"
+
   best_EDSR_v1_path: "src/models/checkpoints/EDSR_v1/best_EDSR_v1.pth"
 
   best_EDSR_PRO_path: "src/models/checkpoints/EDSR_PRO/best_EDSR_PRO.pth"
 
   best_SRESNET_path: "src/models/checkpoints/SRESNET/best_SRESNET.pth"
+
+  
 
 
 history:
@@ -47,6 +52,7 @@ history:
 
 
   EDSR_history_path : "src/models/checkpoints/EDSR/edsr_training_history.json"
+  
   EDSR_v1_history_path : "src/models/checkpoints/EDSR_v1/edsr_v1_training_history.json"
 
   EDSR_PRO_history_path : "src/models/checkpoints/EDSR_PRO/edsr_PRO_training_history.json"
