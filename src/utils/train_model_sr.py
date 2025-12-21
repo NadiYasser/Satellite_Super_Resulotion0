@@ -30,25 +30,6 @@ def train_model_sr(
     best_psnr = 0.0
     start_epoch = 0
 
-    # LOAD CHECKPOINT
-    if os.path.exists(best_model_path):
-        print("Loading checkpoint:", best_model_path)
-        checkpoint = torch.load(best_model_path, map_location=device)
-
-        if isinstance(checkpoint, dict) and "model" in checkpoint:
-            model.load_state_dict(checkpoint["model"])
-            optimizer.load_state_dict(checkpoint["optimizer"])
-            scheduler.load_state_dict(checkpoint["scheduler"])
-            best_psnr = checkpoint["best_psnr"]
-            start_epoch = checkpoint["epoch"] + 1
-            print(f" Resume from epoch {start_epoch} | Best PSNR = {best_psnr:.2f}")
-        else:
-            print(" Old checkpoint without optimizer/scheduler. Loading model only.")
-            model.load_state_dict(checkpoint)
-
-    else:
-        print(f" Training {model_name} from scratch")
-
     # LOAD HISTORY
     train_losses, val_losses = [], []
     train_psnrs, val_psnrs = [], []
@@ -62,8 +43,27 @@ def train_model_sr(
         val_losses   = history["val_losses"]
         train_psnrs  = history["train_psnrs"]
         val_psnrs    = history["val_psnrs"]
+        start_epoch = len(train_losses) 
     else:
         print("No previous training history found.")
+
+    # LOAD CHECKPOINT
+    if os.path.exists(best_model_path):
+        print("Loading checkpoint:", best_model_path)
+        checkpoint = torch.load(best_model_path, map_location=device)
+
+        if isinstance(checkpoint, dict) and "model" in checkpoint:
+            model.load_state_dict(checkpoint["model"])
+            optimizer.load_state_dict(checkpoint["optimizer"])
+            scheduler.load_state_dict(checkpoint["scheduler"])
+            best_psnr = checkpoint["best_psnr"]
+            print(f" Resume from epoch {start_epoch} | Best PSNR = {best_psnr:.2f}")
+        else:
+            print(" Old checkpoint without optimizer/scheduler. Loading model only.")
+            model.load_state_dict(checkpoint)
+
+    else:
+        print(f" Training {model_name} from scratch")
 
     # TRAIN LOOP
     num_epochs += start_epoch
