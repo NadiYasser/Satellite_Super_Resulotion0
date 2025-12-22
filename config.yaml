@@ -8,8 +8,8 @@ paths:
 dataset:
   scale: 4
   grid: 23
-  hr_patch: 128          # taille patch HR
-  lr_patch: 32           # sera recalculé automatiquement si tu veux
+  hr_patch: 128          # HR size
+  lr_patch: 32           # LR size 
   train_ratio: 0.80
   val_ratio: 0.10
   test_ratio: 0.10
@@ -26,7 +26,7 @@ training:
   weight_decay: 0.0
   scheduler_step_size: 20   # StepLR: tous les 20 epochs
   scheduler_gamma: 0.5      # LR = LR * 0.5
-  use_augmentation: true    # data augmentation sur le train
+  use_augmentation: True    # data augmentation sur le train
 
 
 
@@ -43,7 +43,7 @@ model:
   best_EDSR_PRO_path: "src/models/checkpoints/EDSR_PRO/best_EDSR_PRO.pth"
 
   best_SRESNET_path: "src/models/checkpoints/SRESNET/best_SRESNET.pth"
-
+  last_SRESNET_path: "src/models/checkpoints/SRESNET/last_SRESNET.pth"
   
 
 
