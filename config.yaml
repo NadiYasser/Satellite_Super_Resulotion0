@@ -45,11 +45,16 @@ model:
   best_SRESNET_path: "src/models/checkpoints/SRESNET/best_SRESNET.pth"
   last_SRESNET_path: "src/models/checkpoints/SRESNET/last_SRESNET.pth"
   
+  best_custom_path: "src/models/checkpoints/custom/best_custom.pth"
+  last_custom_path: "src/models/checkpoints/custom/last_custom.pth"
+
+  best_custom_large_path: "src/models/checkpoints/custom_large/best_custom_large.pth"
+  last_custom_large_path: "src/models/checkpoints/custom_large/last_custom_large.pth"
 
 
 history:
   SRCNN_history_path: "src/models/checkpoints/SRCNN/srcnn_training_history.json" 
-
+  
 
   EDSR_history_path : "src/models/checkpoints/EDSR/edsr_training_history.json"
   
@@ -58,3 +63,7 @@ history:
   EDSR_PRO_history_path : "src/models/checkpoints/EDSR_PRO/edsr_PRO_training_history.json"
 
   SRESNET_history_path : "src/models/checkpoints/SRESNET/srresnet.json"
+
+  custom_history_path : "src/models/checkpoints/custom/custom.json"
+
+  custom_large_history_path : "src/models/checkpoints/custom_large/custom_large.json"
