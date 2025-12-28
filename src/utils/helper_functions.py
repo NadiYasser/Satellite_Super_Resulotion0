@@ -2,6 +2,8 @@ from tqdm import tqdm
 import math
 import torch.nn.functional as F
 import torch
+from torch import nn
+from torch.nn import init
 import matplotlib.pyplot as plt 
 from torch.amp import autocast, GradScaler
 
@@ -150,3 +152,36 @@ def plot_sr_progress(train_loss, val_loss, train_psnr, val_psnr):
     
     plt.tight_layout()
     plt.show()
+
+
+
+# ESRGAN 
+def calculate_psnr(sr, hr, data_range=2.0):
+    """
+    FUNCTION Used by ESRGAN
+    Calculates PSNR between SR and HR tensors in [-1, 1] range.
+    sr, hr: Tensors of shape (B, C, H, W)
+    """
+    mse = torch.mean((sr - hr) ** 2)
+    if mse == 0:
+        return float('inf')
+    return 20 * torch.log10(data_range / torch.sqrt(mse))
+
+
+def initialize_weights(m):
+    """
+    Standard Kaiming Initialization for ESRGAN components.
+    """
+    if isinstance(m, nn.Conv2d):
+        init.kaiming_normal_(m.weight, a=0.2, mode='fan_in', nonlinearity='leaky_relu')
+        
+        # Scaling down the initial weights slightly as suggested in ESRGAN paper
+        m.weight.data *= 0.1 
+        
+        if m.bias is not None:
+            init.zeros_(m.bias)
+            
+    elif isinstance(m, nn.Linear):
+        init.kaiming_normal_(m.weight, a=0.2, mode='fan_in', nonlinearity='leaky_relu')
+        if m.bias is not None:
+            init.zeros_(m.bias)

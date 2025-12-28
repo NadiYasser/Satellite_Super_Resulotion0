@@ -45,7 +45,7 @@ class Satellite_dataset(Dataset):
         return lr, hr
 
 
-def create_loaders(
+def create_loaders_for_ESRGAN(
         root,
         batch_size=64,
         num_workers=4
