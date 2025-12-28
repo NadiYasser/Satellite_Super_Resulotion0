@@ -1,7 +1,11 @@
 from torch import nn
 import torch.nn.functional as F
 
+#------------------------------------
+
 # SRCNN
+
+#------------------------------------
 class SRCNN(nn.Module):
     def __init__(self, num_channels=3):
         super(SRCNN, self).__init__()
@@ -21,8 +25,11 @@ class SRCNN(nn.Module):
         x = self.conv3(x)
         return x
     
+#------------------------------------
 
 # EDSR
+
+#------------------------------------
 
 class ResidualBlock(nn.Module):
     def __init__(self, channels=64, scale=0.1):
@@ -74,8 +81,11 @@ class EDSR(nn.Module):
         x = self.conv_last(x)
         return x
 
+#------------------------------------
 
 #SRRESNET
+
+#------------------------------------
 
 class ResidualBlockWithBATCH(nn.Module):
     def __init__(self,channels):
@@ -104,6 +114,7 @@ class SubPixelConvBlock(nn.Module):
 
 
 class SRResNet(nn.Module):
+
     """
     n_residual_Blocks is the number of of block inside the reisdual fase 
     upscale_factor = the ratio between the input and the output image
@@ -151,3 +162,12 @@ class SRResNet(nn.Module):
         result = self.SubPixelConv(result)
         result = self.final(result)
         return result
+    
+
+
+#------------------------------------
+
+# ESRGAN
+
+#------------------------------------
+
