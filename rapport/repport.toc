@@ -51,6 +51,12 @@
 \contentsline {paragraph}{Optimization and Learning Rate Scheduling}{22}{section*.31}%
 \contentsline {paragraph}{Computational Setup}{22}{section*.32}%
 \contentsline {subsubsection}{\numberline {4.2.2}ESRGAN Training Procedure}{22}{subsubsection.4.2.2}%
-\contentsline {subsection}{\numberline {4.3}Training Analysis}{23}{subsection.4.3}%
-\contentsline {subsubsection}{\numberline {4.3.1}ESRGAN}{23}{subsubsection.4.3.1}%
-\contentsline {subsubsection}{\numberline {4.3.2}Restruction based models: SRCNN, SRResnet and EDSR}{25}{subsubsection.4.3.2}%
+\contentsline {subsubsection}{\numberline {4.2.3}Training Setup for Custom Handcrafted Models}{23}{subsubsection.4.2.3}%
+\contentsline {paragraph}{Shared Training Configuration}{23}{section*.33}%
+\contentsline {paragraph}{Loss Function Variants}{23}{section*.34}%
+\contentsline {subparagraph}{Custom Model with Perceptual-Pixel Combined Loss}{23}{section*.35}%
+\contentsline {subparagraph}{Custom Model with Pixel-Wise Loss Only}{23}{section*.36}%
+\contentsline {paragraph}{Experimental Motivation}{24}{section*.37}%
+\contentsline {subsection}{\numberline {4.3}Training Analysis}{24}{subsection.4.3}%
+\contentsline {subsubsection}{\numberline {4.3.1}ESRGAN}{24}{subsubsection.4.3.1}%
+\contentsline {subsubsection}{\numberline {4.3.2}Restruction based models: SRCNN, SRResnet and EDSR}{26}{subsubsection.4.3.2}%

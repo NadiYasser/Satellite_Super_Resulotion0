@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.1.5)  5 JAN 2026 18:40
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.1.5)  5 JAN 2026 19:03
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -859,7 +859,7 @@ Package biblatex Warning: 'babel/polyglossia' detected but 'csquotes' missing.
 
 \@quotelevel=\count502
 \@quotereset=\count503
-No file repport.aux.
+(./repport.aux)
 \openout1 = `repport.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 66.
@@ -882,7 +882,7 @@ LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 66.
 LaTeX Font Info:    ... okay on input line 66.
 LaTeX Info: Redefining \degres on input line 66.
 LaTeX Info: Redefining \up on input line 66.
-(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+ (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count504
 \scratchdimen=\dimen310
@@ -1197,25 +1197,25 @@ LaTeX Warning: Reference `fig:perceptualloss' on page 20 undefined on input line
 
 LaTeX Warning: Citation 'kingma2014adam' on page 22 undefined on input line 750.
 
-[22]
-<plots/stage-1.png, id=236, 875.1897pt x 379.4175pt>
+[22] [23]
+<plots/stage-1.png, id=245, 875.1897pt x 379.4175pt>
 File: plots/stage-1.png Graphic file (type png)
 <use plots/stage-1.png>
-Package pdftex.def Info: plots/stage-1.png  used on input line 766.
+Package pdftex.def Info: plots/stage-1.png  used on input line 839.
 (pdftex.def)             Requested size: 409.71692pt x 177.61993pt.
- [23 <./plots/stage-1.png>]
-<plots/stage-2.png, id=246, 875.1897pt x 390.258pt>
+ [24 <./plots/stage-1.png>]
+<plots/stage-2.png, id=257, 875.1897pt x 390.258pt>
 File: plots/stage-2.png Graphic file (type png)
 <use plots/stage-2.png>
-Package pdftex.def Info: plots/stage-2.png  used on input line 787.
+Package pdftex.def Info: plots/stage-2.png  used on input line 860.
 (pdftex.def)             Requested size: 455.24411pt x 202.99487pt.
- [24 <./plots/stage-2.png>]
-<plots/val_and_train_comparaison.png, id=255, 1395.2125pt x 592.2125pt>
+ [25 <./plots/stage-2.png>]
+<plots/val_and_train_comparaison.png, id=265, 1395.2125pt x 592.2125pt>
 File: plots/val_and_train_comparaison.png Graphic file (type png)
 <use plots/val_and_train_comparaison.png>
-Package pdftex.def Info: plots/val_and_train_comparaison.png  used on input line 806.
+Package pdftex.def Info: plots/val_and_train_comparaison.png  used on input line 879.
 (pdftex.def)             Requested size: 455.24411pt x 193.23486pt.
- [25 <./plots/val_and_train_comparaison.png (PNG copy)>] (./repport.aux)
+ [26 <./plots/val_and_train_comparaison.png (PNG copy)>] [27] (./repport.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
@@ -1234,7 +1234,7 @@ Package rerunfilecheck Warning: File `repport.out' has changed.
 
 Package rerunfilecheck Info: Checksums for `repport.out':
 (rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  B9A6ECE668B5D82C2AA47058B6478221;9092.
+(rerunfilecheck)             After:  205CAE4948DCF9519841021FD543B494;9395.
 
 Package biblatex Warning: Please (re)run Biber on the file:
 (biblatex)                repport
@@ -1245,18 +1245,18 @@ Package logreq Info: Writing requests to 'repport.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 33426 strings out of 474222
- 624585 string characters out of 5748734
+ 33437 strings out of 474222
+ 624721 string characters out of 5748734
  1935975 words of memory out of 5000000
- 55097 multiletter control sequences out of 15000+600000
+ 55098 multiletter control sequences out of 15000+600000
  573910 words of font info for 68 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,9n,117p,1194b,1808s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1728.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx2488.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfcc1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfcc2074.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0800.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1728.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt1200.pfb>
-Output written on repport.pdf (26 pages, 7512448 bytes).
+Output written on repport.pdf (28 pages, 7517518 bytes).
 PDF statistics:
- 378 PDF objects out of 1000 (max. 8388607)
- 275 compressed objects within 3 object streams
- 119 named destinations out of 1000 (max. 500000)
+ 394 PDF objects out of 1000 (max. 8388607)
+ 289 compressed objects within 3 object streams
+ 127 named destinations out of 1000 (max. 500000)
  98 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -756,6 +756,79 @@ The training of ESRGAN is conducted in two stages to ensure training stability a
     Both networks are optimized using the Adam optimizer. The learning rate is set to $1 \times 10^{-4}$ for the generator and $5 \times 10^{-5}$ for the discriminator, with progressive decay applied during training. The loss weights are set to $\lambda_{\text{adv}} = 5 \times 10^{-3}$ and $\lambda_{\text{perc}} = 1.0$. Stage~2 training is conducted for 30 epochs, corresponding to approximately 345k iterations, until convergence of perceptual and validation metrics.
 \end{enumerate}
 
+
+\subsubsection{Training Setup for Custom Handcrafted Models}
+
+In addition to the standard super-resolution architectures, two custom models
+designed and implemented from scratch were also evaluated. In order to maintain
+experimental consistency and ensure a fair comparison with the reference models,
+both custom architectures were trained using the same data preprocessing
+pipeline, optimization strategy, and learning rate scheduling as described in
+the unified training setup.
+
+\paragraph{Shared Training Configuration}
+
+Both handcrafted models are trained using a batch size of 64 and 8 data loader
+workers. Training is conducted for 70 epochs with an initial learning rate of
+$1 \times 10^{-4}$ and no weight decay applied. Data augmentation is enabled
+during training to improve robustness and generalization, particularly for
+satellite imagery where spatial invariance is desirable.
+
+The Adam optimizer is employed with momentum parameters $\beta_1 = 0.9$ and
+$\beta_2 = 0.999$. A multi-step learning rate scheduler is applied, reducing the
+learning rate by a factor of 0.5 at epochs 15, 30, and 45. This schedule allows
+the models to progressively refine high-frequency details during later training
+stages.
+
+\paragraph{Loss Function Variants}
+
+The two custom models differ exclusively in the choice of the training loss
+function, allowing an isolated analysis of the impact of perceptual supervision
+on reconstruction quality.
+
+\subparagraph{Custom Model with Perceptual-Pixel Combined Loss}
+
+The first custom model is trained using a composite loss function that combines
+pixel-level accuracy with perceptual similarity. In addition to the $\ell_1$
+pixel loss, a perceptual loss is introduced using feature representations
+extracted from the \texttt{relu3\_3} layer of a pretrained VGG network.
+
+The total loss is defined as:
+\[
+\mathcal{L}_{custom} =
+\mathcal{L}_{L1}
++ \lambda_{p} \, \mathcal{L}_{perc},
+\]
+where $\mathcal{L}_{L1}$ denotes the pixel-wise $\ell_1$ loss,
+$\mathcal{L}_{perc}$ represents the perceptual loss, and $\lambda_{p} = 5 \times
+10^{-4}$ is a weighting factor that balances the contribution of perceptual
+features.
+
+This formulation encourages the network to preserve both numerical accuracy and
+high-level structural information, leading to visually sharper reconstructions.
+
+\subparagraph{Custom Model with Pixel-Wise Loss Only}
+
+The second custom model is trained exclusively using the $\ell_1$ reconstruction
+loss:
+\[
+\mathcal{L}_{L1} = \frac{1}{N} \sum_{i=1}^{N} \left| \hat{y}_i - y_i \right|.
+\]
+
+This configuration serves as a baseline for evaluating the effect of perceptual
+supervision. By relying solely on pixel-level discrepancies, this model favors
+numerical fidelity but may produce smoother textures compared to its
+perceptually supervised counterpart.
+
+\paragraph{Experimental Motivation}
+
+By keeping all training parameters identical except for the loss formulation,
+these two handcrafted models enable a controlled comparison that highlights the
+specific contribution of perceptual loss to super-resolution performance. This
+design choice provides valuable insights into the trade-off between pixel-wise
+accuracy and perceptual quality in custom deep learning architectures.
+
+
 \subsection{Training Analysis}
 
 

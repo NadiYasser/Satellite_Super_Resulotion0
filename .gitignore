@@ -6,3 +6,4 @@ src/models/__pycache__
 src/utils/__pycache__
 src/models/checkpoints 
 notebooks/yasser/__pycache__/custom_model.cpython-312.pyc
+MODEL_TEST

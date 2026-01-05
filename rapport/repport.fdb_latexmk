@@ -1,14 +1,14 @@
 # Fdb version 4
-["biber repport"] 0 "repport.bcf" "repport.bbl" "repport" 1767634857.60442 0
+["biber repport"] 0 "repport.bcf" "repport.bbl" "repport" 1767636186.83845 0
   "references.bib" 0 -1 0 ""
   "repport.bcf" 0 -1 0 "pdflatex"
   (generated)
   "repport.bbl"
   "repport.blg"
   (rewritten before read)
-["pdflatex"] 1767634854.96952 "/home/jadli/Desktop/BDAI2/Satellite_Super_Resulotion0/rapport/repport.tex" "repport.pdf" "repport" 1767634857.60474 2
+["pdflatex"] 1767636184.20446 "/home/jadli/Desktop/BDAI2/Satellite_Super_Resulotion0/rapport/repport.tex" "repport.pdf" "repport" 1767636186.83875 2
   "/etc/texmf/web2c/texmf.cnf" 1767633375.55277 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/jadli/Desktop/BDAI2/Satellite_Super_Resulotion0/rapport/repport.tex" 1767634831.18305 48599 ac14843871fe1261b4fe7345913de7c6 ""
+  "/home/jadli/Desktop/BDAI2/Satellite_Super_Resulotion0/rapport/repport.tex" 1767635982.60417 51830 68f3358ea0e35ab368e203669eeedeeb ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecbx1200.tfm" 1136768653 3584 402da0b29eafbad07963b1224b222f18 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecbx1440.tfm" 1136768653 3584 13049b61b922a28b158a38aeff75ee9b ""
@@ -244,11 +244,11 @@
   "plots/stage-1.png" 1767633819.58617 53826 0209c795c966c947c23f779afcc8482f ""
   "plots/stage-2.png" 1767633819.58658 65534 08e53e9b3dea222784c6c533b58653e4 ""
   "plots/val_and_train_comparaison.png" 1767633819.58741 153204 be962da4a873372b52a6e62c9c662523 ""
-  "repport.aux" 1767634857.39282 13229 6044505243653209d3419e56ade72f75 "pdflatex"
+  "repport.aux" 1767636186.64633 13992 09ef296beb1d0dbf8ed6ba9fc770bd3f "pdflatex"
   "repport.bbl" 0 -1 0 "biber repport"
-  "repport.out" 1767634857.39417 9092 b9a6ece668b5d82c2aa47058b6478221 "pdflatex"
-  "repport.tex" 1767634831.18305 48599 ac14843871fe1261b4fe7345913de7c6 ""
-  "repport.toc" 1767634857.39819 5210 b44992d51507116e44274d026cb4f2d0 "pdflatex"
+  "repport.out" 1767636186.64833 9395 205cae4948dcf9519841021fd543b494 "pdflatex"
+  "repport.tex" 1767635982.60417 51830 68f3358ea0e35ab368e203669eeedeeb ""
+  "repport.toc" 1767636186.6523 5727 b5642b02da4ec6d740fca413ddd62e1a "pdflatex"
   (generated)
   "repport.aux"
   "repport.bcf"
