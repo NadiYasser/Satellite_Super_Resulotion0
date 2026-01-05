@@ -52,6 +52,8 @@ model:
   best_custom_large_path: "src/models/checkpoints/custom_large/best_custom_large.pth"
   last_custom_large_path: "src/models/checkpoints/custom_large/last_custom_large.pth"
 
+  best_custom_large2_path: "src/models/checkpoints/custom_large2/best_custom_large2.pth"
+  last_custom_large2_path: "src/models/checkpoints/custom_large2/last_custom_large2.pth"
 
 history:
   SRCNN_history_path: "src/models/checkpoints/SRCNN/srcnn_training_history.json" 
@@ -68,3 +70,5 @@ history:
   custom_history_path : "src/models/checkpoints/custom/custom.json"
 
   custom_large_history_path : "src/models/checkpoints/custom_large/custom_large.json"
+
+  custom_large2_history_path : "src/models/checkpoints/custom_large2/custom_large2.json"
