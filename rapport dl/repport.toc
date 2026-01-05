@@ -1,0 +1,60 @@
+\babel@toc {french}{}\relax 
+\contentsline {section}{\numberline {1}Introduction}{3}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Motivation}{3}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Problem statement}{3}{subsection.1.2}%
+\contentsline {section}{\numberline {2}Dataset, Patching, and Performance Metrics}{4}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Dataset Description}{4}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Image Dimensions and Patch-Based Preprocessing}{4}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Samples vizualisation}{5}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Evaluation Metrics}{6}{subsection.2.4}%
+\contentsline {subsubsection}{\numberline {2.4.1}Peak Signal-to-Noise Ratio (PSNR)}{6}{subsubsection.2.4.1}%
+\contentsline {subsubsection}{\numberline {2.4.2}Structural Similarity Index Measure (SSIM)}{6}{subsubsection.2.4.2}%
+\contentsline {subsubsection}{\numberline {2.4.3}Learned Perceptual Image Patch Similarity (LPIPS)}{6}{subsubsection.2.4.3}%
+\contentsline {section}{\numberline {3}Models Development}{7}{section.3}%
+\contentsline {subsection}{\numberline {3.1}SRCNN: Super-Resolution Convolutional Neural Network}{7}{subsection.3.1}%
+\contentsline {subsubsection}{\numberline {3.1.1}Global Architecture of SRCNN}{7}{subsubsection.3.1.1}%
+\contentsline {subsubsection}{\numberline {3.1.2}Network Layers and Mathematical Modeling}{8}{subsubsection.3.1.2}%
+\contentsline {paragraph}{First layer: Patch extraction and representation}{8}{section*.5}%
+\contentsline {paragraph}{Second layer: Nonlinear mapping}{8}{section*.6}%
+\contentsline {paragraph}{Third layer: Reconstruction}{8}{section*.7}%
+\contentsline {subsection}{\numberline {3.2}SRResnet: Super Resolution Residual Network}{9}{subsection.3.2}%
+\contentsline {subsubsection}{\numberline {3.2.1}Residual Block}{9}{subsubsection.3.2.1}%
+\contentsline {subsubsection}{\numberline {3.2.2}Sub-pixel convolution }{10}{subsubsection.3.2.2}%
+\contentsline {subsubsection}{\numberline {3.2.3}Overall Architecture of SRResNet}{10}{subsubsection.3.2.3}%
+\contentsline {subsection}{\numberline {3.3}EDSR: Enhanced Deep Residual Network}{11}{subsection.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.1}Enhanced Residual Blocks}{11}{subsubsection.3.3.1}%
+\contentsline {subsubsection}{\numberline {3.3.2}Residual Scaling and Training Stability}{12}{subsubsection.3.3.2}%
+\contentsline {subsubsection}{\numberline {3.3.3}Overall Architecture of the EDSR Model}{12}{subsubsection.3.3.3}%
+\contentsline {subsection}{\numberline {3.4}ESRGAN: Enhanced Super Resolution GAN}{13}{subsection.3.4}%
+\contentsline {subsubsection}{\numberline {3.4.1}GAN: Generative Adversarial Network}{13}{subsubsection.3.4.1}%
+\contentsline {subsubsection}{\numberline {3.4.2}Adversarial Loss in ESRGAN}{14}{subsubsection.3.4.2}%
+\contentsline {subsubsection}{\numberline {3.4.3}Networks Architecture}{14}{subsubsection.3.4.3}%
+\contentsline {paragraph}{Main Components}{15}{section*.14}%
+\contentsline {subparagraph}{1. Generator Network}{15}{section*.15}%
+\contentsline {subparagraph}{2. Residual-in-Residual Dense Blocks (RRDB)}{15}{section*.17}%
+\contentsline {subparagraph}{3. Discriminator Network}{15}{section*.19}%
+\contentsline {subsection}{\numberline {3.5}MSFSSR: Multi-Scale and Frequency-Separated Super-Resolution Network}{16}{subsection.3.5}%
+\contentsline {subsubsection}{\numberline {3.5.1}Motivation and Positioning}{16}{subsubsection.3.5.1}%
+\contentsline {subsubsection}{\numberline {3.5.2}Multi-Scale Residual Block Definition}{16}{subsubsection.3.5.2}%
+\contentsline {subsubsection}{\numberline {3.5.3}Frequency-Separated Learning}{17}{subsubsection.3.5.3}%
+\contentsline {subsubsection}{\numberline {3.5.4}Overall Architecture}{18}{subsubsection.3.5.4}%
+\contentsline {section}{\numberline {4}Training Details}{19}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Objective Functions and Optimization}{19}{subsection.4.1}%
+\contentsline {subsubsection}{\numberline {4.1.1}Loss Functions}{19}{subsubsection.4.1.1}%
+\contentsline {subparagraph}{L1 Reconstruction Loss}{19}{section*.26}%
+\contentsline {subparagraph}{Perceptual (Content) Loss}{19}{section*.27}%
+\contentsline {subsubsection}{\numberline {4.1.2}Optimizer}{20}{subsubsection.4.1.2}%
+\contentsline {subsection}{\numberline {4.2}Training Setup}{21}{subsection.4.2}%
+\contentsline {subsubsection}{\numberline {4.2.1}SRCNN - SRRESNET - EDSR Common Training Procedure}{21}{subsubsection.4.2.1}%
+\contentsline {paragraph}{Training Configuration}{21}{section*.29}%
+\contentsline {paragraph}{Optimization and Learning Rate Scheduling}{21}{section*.30}%
+\contentsline {subsubsection}{\numberline {4.2.2}ESRGAN Training Procedure}{21}{subsubsection.4.2.2}%
+\contentsline {subsubsection}{\numberline {4.2.3}Training Setup for Custom Handcrafted Models}{22}{subsubsection.4.2.3}%
+\contentsline {paragraph}{Shared Training Configuration}{22}{section*.31}%
+\contentsline {paragraph}{Loss Function Variants}{22}{section*.32}%
+\contentsline {subparagraph}{Custom Model with Perceptual-Pixel Combined Loss}{23}{section*.33}%
+\contentsline {subparagraph}{Custom Model with Pixel-Wise Loss Only}{23}{section*.34}%
+\contentsline {paragraph}{Experimental Motivation}{23}{section*.35}%
+\contentsline {subsection}{\numberline {4.3}Training Analysis}{24}{subsection.4.3}%
+\contentsline {subsubsection}{\numberline {4.3.1}ESRGAN}{24}{subsubsection.4.3.1}%
+\contentsline {subsubsection}{\numberline {4.3.2}Restruction based models: SRCNN, SRResnet and EDSR}{26}{subsubsection.4.3.2}%
