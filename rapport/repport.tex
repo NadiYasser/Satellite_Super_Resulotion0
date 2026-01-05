@@ -691,7 +691,54 @@ Adam is chosen due to its robustness, fast convergence, and widespread adoption 
 
 
 \subsection{Training Setup}
-\subsubsection{ESRGAN Training Details}
+
+\subsubsection{SRCNN - SRRESNET - EDSR Common Training Procedure}
+
+To ensure a fair and consistent comparison between the different super-resolution
+architectures, namely SRCNN, SRResNet andEDSR,
+all models are trained using an identical training configuration.  
+This unified training strategy allows the observed performance differences to be
+attributed primarily to architectural design choices rather than variations in
+optimization or data handling.
+
+\paragraph{Training Configuration}
+
+Training is performed using mini-batch gradient-based optimization with a batch
+size of 64. Data loading is parallelized using 8 worker threads in order to
+maximize GPU utilization and reduce input pipeline latency. Each model is trained
+for a total of 100 epochs, which provides sufficient convergence for all
+architectures under the adopted loss function.
+
+Data augmentation is applied during training to improve model generalization.
+Augmentation techniques include random horizontal and vertical flips, as well as
+random rotations, which are particularly effective for satellite imagery due to
+its rotational invariance.
+
+\paragraph{Loss Function}
+
+All models are optimized using the $\ell_1$ reconstruction loss
+
+\paragraph{Optimization and Learning Rate Scheduling}
+
+Model parameters are optimized using the Adam optimizer with momentum parameters
+$\beta_1 = 0.9$ and $\beta_2 = 0.999$. The initial learning rate is set to
+$1 \times 10^{-4}$, with no weight decay applied.  
+
+To improve convergence and stabilize training, a multi-step learning rate
+scheduler is employed. The learning rate is reduced by a factor of 0.5 at epochs
+15, 30, and 45, allowing the models to progressively refine high-frequency
+details as training proceeds.
+
+\paragraph{Computational Setup}
+
+All experiments are conducted on a GPU-enabled environment when available.
+Training is performed on a CUDA-compatible device, with automatic fallback to
+CPU execution if GPU resources are unavailable. This setup ensures efficient
+training while maintaining reproducibility across different hardware
+configurations.
+
+
+\subsubsection{ESRGAN Training Procedure}
 
 The training of ESRGAN is conducted in two stages to ensure training stability and high perceptual quality:
 
@@ -711,6 +758,7 @@ The training of ESRGAN is conducted in two stages to ensure training stability a
 
 \subsection{Training Analysis}
 
+
 \subsubsection{ESRGAN}
 \subsubsection*{Stage 1: Pixel-wise pretraining}
 \begin{figure}[H]
@@ -720,7 +768,7 @@ The training of ESRGAN is conducted in two stages to ensure training stability a
     \label{fig:stage1}
 \end{figure}
 
-Figure~\ref{fig:stage1} presents the training and validation performance of the ESRGAN generator during Stage~1, which corresponds to pixel-wise pretraining using the L1 loss.
+This Figure presents the training and validation performance of the ESRGAN generator during Stage~1, which corresponds to pixel-wise pretraining using the L1 loss.
 
 The left subplot shows the evolution of the L1 loss over epochs. Both training and validation losses decrease steadily, with the training loss reducing from 0.064 to 0.053 and the validation loss from 0.058 to 0.053. The close alignment between the two curves indicates stable optimization and the absence of overfitting.
 
@@ -742,7 +790,7 @@ Overall, these results demonstrate that the pixel-wise pretraining stage effecti
 \end{figure}
 
 
-Figure~\ref{fig:stage2} presents the validation performance of ESRGAN during Stage 2, which corresponds to adversarial training with perceptual (VGG) and GAN losses. This stage builds upon the generator pretrained in Stage 1, where optimization was guided by pixel-wise reconstruction metrics such as L1 loss and PSNR.
+This Figure presents the validation performance of ESRGAN during Stage 2, which corresponds to adversarial training with perceptual (VGG) and GAN losses. This stage builds upon the generator pretrained in Stage 1, where optimization was guided by pixel-wise reconstruction metrics such as L1 loss and PSNR.
 
 The left subplot shows the evolution of PSNR for both training and validation sets. In contrast to Stage 1, where PSNR increased monotonically, Stage 2 exhibits moderate fluctuations and an overall reduction in PSNR. Training PSNR remains around 25.0–25.3 dB, while validation PSNR fluctuates between approximately 25.4 dB and 26.2 dB. This behavior is expected, as the introduction of adversarial and perceptual losses shifts the optimization objective away from strict pixel-wise accuracy toward perceptual realism. Consequently, a decrease in PSNR is commonly observed in GAN-based super-resolution methods and reflects the trade-off between numerical fidelity and visual quality.
 
@@ -760,7 +808,7 @@ Training is intentionally stopped once the LPIPS metric stabilizes and no longer
     \label{fig:reconModels}
 \end{figure}
 
-Figure~\ref{fig:reconModels} compares the training and validation behavior of three super-resolution models (SRCNN, SRResNet, and EDSR) in terms of L1 loss (left) and PSNR (right) across 100 epochs.
+This Figure compares the training and validation behavior of three super-resolution models (SRCNN, SRResNet, and EDSR) in terms of L1 loss (left) and PSNR (right) across 100 epochs.
 
 In the left subplot, all methods exhibit a rapid decrease in loss during the initial epochs followed by a slower convergence phase, indicating stable optimization. Among the evaluated models, EDSR achieves the lowest validation loss, converging to approximately $2.60\times10^{-2}$, followed by SRResNet at around $2.80\times10^{-2}$, while SRCNN shows the highest validation loss, stabilizing near $3.0\times10^{-2}$. This ranking suggests that EDSR provides the most accurate pixel-wise reconstruction on the validation set.
 

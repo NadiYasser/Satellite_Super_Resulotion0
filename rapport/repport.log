@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.12.15)  5 JAN 2026 18:19
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.1.5)  5 JAN 2026 18:40
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**/home/adnane/Desktop/Satellite-Project/rapport/repport.tex
-(/home/adnane/Desktop/Satellite-Project/rapport/repport.tex
+**/home/jadli/Desktop/BDAI2/Satellite_Super_Resulotion0/rapport/repport.tex
+(/home/jadli/Desktop/BDAI2/Satellite_Super_Resulotion0/rapport/repport.tex
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
@@ -34,9 +34,9 @@ Package: babel 2024/01/07 v24.1 The Babel package
  (/usr/share/texlive/texmf-dist/tex/generic/babel-french/french.ldf
 Language: french 2023-12-19 v3.5r French support from the babel system
 Package babel Info: Hyphen rules for 'acadian' set to \l@french
-(babel)             (\language33). Reported on input line 91.
+(babel)             (\language17). Reported on input line 91.
 Package babel Info: Hyphen rules for 'canadien' set to \l@french
-(babel)             (\language33). Reported on input line 92.
+(babel)             (\language17). Reported on input line 92.
 \FB@stdchar=\count197
 Package babel Info: Making : an active character on input line 420.
 Package babel Info: Making ; an active character on input line 421.
@@ -859,7 +859,7 @@ Package biblatex Warning: 'babel/polyglossia' detected but 'csquotes' missing.
 
 \@quotelevel=\count502
 \@quotereset=\count503
-(./repport.aux)
+No file repport.aux.
 \openout1 = `repport.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 66.
@@ -882,7 +882,7 @@ LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 66.
 LaTeX Font Info:    ... okay on input line 66.
 LaTeX Info: Redefining \degres on input line 66.
 LaTeX Info: Redefining \up on input line 66.
- (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count504
 \scratchdimen=\dimen310
@@ -981,7 +981,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has b
                    \relax 
 l.106 \newpage
                [1]
-/home/adnane/Desktop/Satellite-Project/rapport/repport.tex:122: Undefined control sequence.
+/home/jadli/Desktop/BDAI2/Satellite_Super_Resulotion0/rapport/repport.tex:122: Undefined control sequence.
 l.122 ...n representation. Let $I^{LR} \in \mathbb
                                                   {R}^{H \times W \times C}$...
 The control sequence at the end of the top line
@@ -990,7 +990,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/home/adnane/Desktop/Satellite-Project/rapport/repport.tex:122: Undefined control sequence.
+/home/jadli/Desktop/BDAI2/Satellite_Super_Resulotion0/rapport/repport.tex:122: Undefined control sequence.
 l.122 ...n satellite image and $I^{HR} \in \mathbb
                                                   {R}^{4H \times 4W \times C...
 The control sequence at the end of the top line
@@ -1055,7 +1055,7 @@ File: Architectures/edsr_architecture.png Graphic file (type png)
 Package pdftex.def Info: Architectures/edsr_architecture.png  used on input line 446.
 (pdftex.def)             Requested size: 318.66948pt x 195.51619pt.
  [11 <./Architectures/Residual_Block.png>]
-/home/adnane/Desktop/Satellite-Project/rapport/repport.tex:469: Undefined control sequence.
+/home/jadli/Desktop/BDAI2/Satellite_Super_Resulotion0/rapport/repport.tex:469: Undefined control sequence.
 l.469 \min_G \max_D \; \mathbb
                               {E}_{x \sim p_{data}(x)}[\log D(x)] + \mathbb{...
 The control sequence at the end of the top line
@@ -1064,7 +1064,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/home/adnane/Desktop/Satellite-Project/rapport/repport.tex:469: Undefined control sequence.
+/home/jadli/Desktop/BDAI2/Satellite_Super_Resulotion0/rapport/repport.tex:469: Undefined control sequence.
 l.469 ...{x \sim p_{data}(x)}[\log D(x)] + \mathbb
                                                   {E}_{z \sim p_z(z)}[\log (...
 The control sequence at the end of the top line
@@ -1079,7 +1079,7 @@ File: Architectures/GAN-architecture.png Graphic file (type png)
 Package pdftex.def Info: Architectures/GAN-architecture.png  used on input line 476.
 (pdftex.def)             Requested size: 364.19667pt x 163.51556pt.
 [12 <./Architectures/edsr_architecture.png>]
-/home/adnane/Desktop/Satellite-Project/rapport/repport.tex:485: Undefined control sequence.
+/home/jadli/Desktop/BDAI2/Satellite_Super_Resulotion0/rapport/repport.tex:485: Undefined control sequence.
 l.485 ...(x_r, x_f) = \sigma\left(D(x_r) - \mathbb
                                                   {E}_{x_f}[D(x_f)]\right)
 The control sequence at the end of the top line
@@ -1088,7 +1088,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/home/adnane/Desktop/Satellite-Project/rapport/repport.tex:488: Undefined control sequence.
+/home/jadli/Desktop/BDAI2/Satellite_Super_Resulotion0/rapport/repport.tex:488: Undefined control sequence.
 l.488 ...(x_f, x_r) = \sigma\left(D(x_f) - \mathbb
                                                   {E}_{x_r}[D(x_r)]\right)
 The control sequence at the end of the top line
@@ -1097,7 +1097,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/home/adnane/Desktop/Satellite-Project/rapport/repport.tex:495: Undefined control sequence.
+/home/jadli/Desktop/BDAI2/Satellite_Super_Resulotion0/rapport/repport.tex:495: Undefined control sequence.
 l.495 -\mathbb
               {E}_{x_r}[\log(1 - D_{Ra}(x_r, x_f))]
 The control sequence at the end of the top line
@@ -1106,7 +1106,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/home/adnane/Desktop/Satellite-Project/rapport/repport.tex:496: Undefined control sequence.
+/home/jadli/Desktop/BDAI2/Satellite_Super_Resulotion0/rapport/repport.tex:496: Undefined control sequence.
 l.496 -\mathbb
               {E}_{x_f}[\log(D_{Ra}(x_f, x_r))]
 The control sequence at the end of the top line
@@ -1140,7 +1140,7 @@ Overfull \hbox (35.52423pt too wide) in paragraph at lines 547--547
 LaTeX Warning: File `Architectures/MSRB.png' not found on input line 562.
 
 
-/home/adnane/Desktop/Satellite-Project/rapport/repport.tex:562: Package pdftex.def Error: File `Architectures/MSRB.png' not found: using draft setting.
+/home/jadli/Desktop/BDAI2/Satellite_Super_Resulotion0/rapport/repport.tex:562: Package pdftex.def Error: File `Architectures/MSRB.png' not found: using draft setting.
 
 See the pdftex.def package documentation for explanation.
 Type  H <return>  for immediate help.
@@ -1156,7 +1156,7 @@ If that doesn't work, type  X <return>  to quit.
 LaTeX Warning: File `Architectures/laplacian filter.png' not found on input line 587.
 
 
-/home/adnane/Desktop/Satellite-Project/rapport/repport.tex:587: Package pdftex.def Error: File `Architectures/laplacian filter.png' not found: using draft setting.
+/home/jadli/Desktop/BDAI2/Satellite_Super_Resulotion0/rapport/repport.tex:587: Package pdftex.def Error: File `Architectures/laplacian filter.png' not found: using draft setting.
 
 See the pdftex.def package documentation for explanation.
 Type  H <return>  for immediate help.
@@ -1172,7 +1172,7 @@ If that doesn't work, type  X <return>  to quit.
 LaTeX Warning: File `Architectures/MSFSSR.png' not found on input line 608.
 
 
-/home/adnane/Desktop/Satellite-Project/rapport/repport.tex:608: Package pdftex.def Error: File `Architectures/MSFSSR.png' not found: using draft setting.
+/home/jadli/Desktop/BDAI2/Satellite_Super_Resulotion0/rapport/repport.tex:608: Package pdftex.def Error: File `Architectures/MSFSSR.png' not found: using draft setting.
 
 See the pdftex.def package documentation for explanation.
 Type  H <return>  for immediate help.
@@ -1193,41 +1193,29 @@ Package pdftex.def Info: Architectures/content_loss.png  used on input line 641.
 
 LaTeX Warning: Reference `fig:perceptualloss' on page 20 undefined on input line 647.
 
-[20 <./Architectures/content_loss.png>]
+[20 <./Architectures/content_loss.png>] [21]
 
-LaTeX Warning: Citation 'kingma2014adam' on page 21 undefined on input line 703.
+LaTeX Warning: Citation 'kingma2014adam' on page 22 undefined on input line 750.
 
-[21]
-<plots/stage-1.png, id=226, 875.1897pt x 379.4175pt>
+[22]
+<plots/stage-1.png, id=236, 875.1897pt x 379.4175pt>
 File: plots/stage-1.png Graphic file (type png)
 <use plots/stage-1.png>
-Package pdftex.def Info: plots/stage-1.png  used on input line 718.
+Package pdftex.def Info: plots/stage-1.png  used on input line 766.
 (pdftex.def)             Requested size: 409.71692pt x 177.61993pt.
-
-
-LaTeX Warning: Reference `fig:stage1' on page 22 undefined on input line 723.
-
-[22 <./plots/stage-1.png>]
-<plots/stage-2.png, id=237, 875.1897pt x 390.258pt>
+ [23 <./plots/stage-1.png>]
+<plots/stage-2.png, id=246, 875.1897pt x 390.258pt>
 File: plots/stage-2.png Graphic file (type png)
 <use plots/stage-2.png>
-Package pdftex.def Info: plots/stage-2.png  used on input line 739.
+Package pdftex.def Info: plots/stage-2.png  used on input line 787.
 (pdftex.def)             Requested size: 455.24411pt x 202.99487pt.
-
-
-LaTeX Warning: Reference `fig:stage2' on page 23 undefined on input line 745.
-
-[23 <./plots/stage-2.png>]
-<plots/val_and_train_comparaison.png, id=245, 1395.2125pt x 592.2125pt>
+ [24 <./plots/stage-2.png>]
+<plots/val_and_train_comparaison.png, id=255, 1395.2125pt x 592.2125pt>
 File: plots/val_and_train_comparaison.png Graphic file (type png)
 <use plots/val_and_train_comparaison.png>
-Package pdftex.def Info: plots/val_and_train_comparaison.png  used on input line 758.
+Package pdftex.def Info: plots/val_and_train_comparaison.png  used on input line 806.
 (pdftex.def)             Requested size: 455.24411pt x 193.23486pt.
-
-
-LaTeX Warning: Reference `fig:reconModels' on page 24 undefined on input line 763.
-
-[24 <./plots/val_and_train_comparaison.png (PNG copy)>] [25] (./repport.aux)
+ [25 <./plots/val_and_train_comparaison.png (PNG copy)>] (./repport.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
@@ -1246,7 +1234,7 @@ Package rerunfilecheck Warning: File `repport.out' has changed.
 
 Package rerunfilecheck Info: Checksums for `repport.out':
 (rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  56A0C32A18199D6525B323E4B15A3059;8748.
+(rerunfilecheck)             After:  B9A6ECE668B5D82C2AA47058B6478221;9092.
 
 Package biblatex Warning: Please (re)run Biber on the file:
 (biblatex)                repport
@@ -1257,18 +1245,18 @@ Package logreq Info: Writing requests to 'repport.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 33424 strings out of 474222
- 624525 string characters out of 5748732
+ 33426 strings out of 474222
+ 624585 string characters out of 5748734
  1935975 words of memory out of 5000000
- 55098 multiletter control sequences out of 15000+600000
+ 55097 multiletter control sequences out of 15000+600000
  573910 words of font info for 68 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,9n,117p,1179b,1805s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 84i,9n,117p,1194b,1808s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1728.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx2488.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfcc1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfcc2074.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0800.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1728.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt1200.pfb>
-Output written on repport.pdf (26 pages, 7510677 bytes).
+Output written on repport.pdf (26 pages, 7512448 bytes).
 PDF statistics:
- 372 PDF objects out of 1000 (max. 8388607)
- 269 compressed objects within 3 object streams
- 114 named destinations out of 1000 (max. 500000)
+ 378 PDF objects out of 1000 (max. 8388607)
+ 275 compressed objects within 3 object streams
+ 119 named destinations out of 1000 (max. 500000)
  98 words of extra memory for PDF output out of 10000 (max. 10000000)
 

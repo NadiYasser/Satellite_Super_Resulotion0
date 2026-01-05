@@ -45,7 +45,12 @@
 \contentsline {subparagraph}{Perceptual (Content) Loss}{20}{section*.27}%
 \contentsline {subsubsection}{\numberline {4.1.2}Optimizer}{21}{subsubsection.4.1.2}%
 \contentsline {subsection}{\numberline {4.2}Training Setup}{21}{subsection.4.2}%
-\contentsline {subsubsection}{\numberline {4.2.1}ESRGAN Training Details}{21}{subsubsection.4.2.1}%
-\contentsline {subsection}{\numberline {4.3}Training Analysis}{22}{subsection.4.3}%
-\contentsline {subsubsection}{\numberline {4.3.1}ESRGAN}{22}{subsubsection.4.3.1}%
-\contentsline {subsubsection}{\numberline {4.3.2}Restruction based models: SRCNN, SRResnet and EDSR}{24}{subsubsection.4.3.2}%
+\contentsline {subsubsection}{\numberline {4.2.1}SRCNN - SRRESNET - EDSR Common Training Procedure}{21}{subsubsection.4.2.1}%
+\contentsline {paragraph}{Training Configuration}{21}{section*.29}%
+\contentsline {paragraph}{Loss Function}{22}{section*.30}%
+\contentsline {paragraph}{Optimization and Learning Rate Scheduling}{22}{section*.31}%
+\contentsline {paragraph}{Computational Setup}{22}{section*.32}%
+\contentsline {subsubsection}{\numberline {4.2.2}ESRGAN Training Procedure}{22}{subsubsection.4.2.2}%
+\contentsline {subsection}{\numberline {4.3}Training Analysis}{23}{subsection.4.3}%
+\contentsline {subsubsection}{\numberline {4.3.1}ESRGAN}{23}{subsubsection.4.3.1}%
+\contentsline {subsubsection}{\numberline {4.3.2}Restruction based models: SRCNN, SRResnet and EDSR}{25}{subsubsection.4.3.2}%

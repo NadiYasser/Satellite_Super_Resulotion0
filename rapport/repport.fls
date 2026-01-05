@@ -1,9 +1,9 @@
-PWD /home/adnane/Desktop/Satellite-Project/rapport
+PWD /home/jadli/Desktop/BDAI2/Satellite_Super_Resulotion0/rapport
 INPUT /etc/texmf/web2c/texmf.cnf
 INPUT /usr/share/texmf/web2c/texmf.cnf
 INPUT /usr/share/texlive/texmf-dist/web2c/texmf.cnf
 INPUT /var/lib/texmf/web2c/pdftex/pdflatex.fmt
-INPUT /home/adnane/Desktop/Satellite-Project/rapport/repport.tex
+INPUT /home/jadli/Desktop/BDAI2/Satellite_Super_Resulotion0/rapport/repport.tex
 OUTPUT repport.log
 INPUT /usr/share/texlive/texmf-dist/tex/latex/base/article.cls
 INPUT /usr/share/texlive/texmf-dist/tex/latex/base/article.cls
@@ -291,9 +291,6 @@ INPUT /usr/share/texlive/texmf-dist/tex/latex/tools/tabularx.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/colortbl/colortbl.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/colortbl/colortbl.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/graphics/color.sty
-INPUT ./repport.aux
-INPUT ./repport.aux
-INPUT repport.aux
 OUTPUT repport.aux
 INPUT /usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 INPUT /usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
