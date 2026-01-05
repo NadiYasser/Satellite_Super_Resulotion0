@@ -1,7 +1,11 @@
 from torch import nn
 import torch.nn.functional as F
+from torchvision import models
+#------------------------------------
 
 # SRCNN
+
+#------------------------------------
 class SRCNN(nn.Module):
     def __init__(self, num_channels=3):
         super(SRCNN, self).__init__()
@@ -21,8 +25,11 @@ class SRCNN(nn.Module):
         x = self.conv3(x)
         return x
     
+#------------------------------------
 
 # EDSR
+
+#------------------------------------
 
 class ResidualBlock(nn.Module):
     def __init__(self, channels=64, scale=0.1):
@@ -74,8 +81,11 @@ class EDSR(nn.Module):
         x = self.conv_last(x)
         return x
 
+#------------------------------------
 
 #SRRESNET
+
+#------------------------------------
 
 class ResidualBlockWithBATCH(nn.Module):
     def __init__(self,channels):
@@ -104,6 +114,7 @@ class SubPixelConvBlock(nn.Module):
 
 
 class SRResNet(nn.Module):
+
     """
     n_residual_Blocks is the number of of block inside the reisdual fase 
     upscale_factor = the ratio between the input and the output image
@@ -151,3 +162,122 @@ class SRResNet(nn.Module):
         result = self.SubPixelConv(result)
         result = self.final(result)
         return result
+    
+
+
+#------------------------------------
+
+# ESRGAN
+
+#------------------------------------
+
+# GENERATOR 
+class Dense_layer(nn.Module):
+    def __init__(self, in_channels, growth_rate):
+        super().__init__()
+        
+        self.conv = nn.Conv2d(in_channels, growth_rate, 3, 1, 1)
+        self.relu = nn.LeakyReLU(0.2, inplace=True)
+    
+    def forward(self, x):
+        out = self.relu(self.conv(x))
+        # dim=1 concatination au niveau des channels
+        return torch.cat([x, out], dim=1)
+
+class ResidualDenseBlock(nn.Module):
+    def __init__(self, in_channels, n_dense_layers=4, growth_rate=32, residual_scale=0.2):
+        super().__init__()
+        
+        self.residual_scale = residual_scale
+        self.rdb = nn.Sequential(*[Dense_layer(in_channels + i * growth_rate, growth_rate) for i in range(n_dense_layers)])
+        self.conv = nn.Conv2d(in_channels + n_dense_layers * growth_rate, in_channels, 3, 1, 1)
+        
+    def forward(self, x):
+        out = self.rdb(x)
+        return self.conv(out) * self.residual_scale + x
+    
+class RRDB(nn.Module):
+    def __init__(self, channels):
+        super().__init__()
+        self.rdb1 = ResidualDenseBlock(channels)
+        self.rdb2 = ResidualDenseBlock(channels)
+        self.rdb3 = ResidualDenseBlock(channels)
+
+    def forward(self, x):
+        out = self.rdb1(x)
+        out = self.rdb2(out)
+        out = self.rdb3(out)
+        return x + 0.2 * out
+
+class GENERATOR(nn.Module):
+    def __init__(self, in_channels, num_features, num_blocks):
+        super().__init__()
+        self.first_conv = nn.Conv2d(in_channels, num_features, 9, 1, 9//2)
+        
+        self.RRDB = nn.Sequential(
+            *[RRDB(num_features) for i in range(num_blocks)]
+        )
+        
+        self.tail_res = nn.Conv2d(num_features, num_features, 3, 1, 1)
+        
+        self.upsample = nn.Sequential(
+            nn.Conv2d(num_features, 256, 3, 1, 1),
+            nn.PixelShuffle(2),
+            nn.PReLU(),
+            nn.Conv2d(num_features, 256, 3, 1, 1),
+            nn.PixelShuffle(2),
+            nn.PReLU(),
+            nn.Conv2d(num_features, 3, 9, 1, 9//2),
+            nn.Tanh()
+        )
+    def forward(self, x):
+        x = self.first_conv(x)
+        out = self.RRDB(x)
+        out = self.tail_res(out) + x
+        out = self.upsample(out)
+        return out
+
+# DISCRIMINATOR 
+class Discriminator(nn.Module):
+    def __init__(self):
+        super().__init__()
+        self.initial = nn.Sequential(
+            nn.Conv2d(3, 64, 3, 1, 1),
+            nn.LeakyReLU(0.2)
+        )
+        layers = []
+        in_ch = 64
+        for _ in range(3):
+            layers.append(nn.Sequential(
+                nn.Conv2d(in_ch, in_ch, 3, 2, 1),
+                nn.LeakyReLU(0.2),
+                nn.Conv2d(in_ch, in_ch*2, 3, 1, 1),
+                nn.LeakyReLU(0.2)
+            ))
+            in_ch *= 2
+        self.blocks = nn.Sequential(*layers)
+        self.fc = nn.Sequential(
+            nn.Flatten(),
+            nn.LazyLinear(1024),
+            nn.Dropout(0.3),
+            nn.LeakyReLU(0.2),
+            nn.LazyLinear(1)
+        )
+
+    def forward(self, x):
+        x = self.initial(x)
+        x = self.blocks(x)
+        x = self.fc(x)
+        return x
+
+# VGG FOR PERCIPTUAL LOSS
+class VGGFeatureExtractor(nn.Module):
+    def __init__(self, device='cuda', feature_layer=34):
+        super().__init__()
+        vgg = models.vgg19(weights=models.VGG19_Weights.DEFAULT).features.to(device).eval()
+        for p in vgg.parameters():
+            p.requires_grad = False
+        self.features = nn.Sequential(*list(vgg.children())[:feature_layer+1]).to(device)
+
+    def forward(self, x):
+        return self.features(x)
