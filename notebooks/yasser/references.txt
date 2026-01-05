@@ -1,2 +1,0 @@
-using patches for data : https://www.sciencedirect.com/org/science/article/pii/S1546221822004908 : S. Ullah and S. Song, “SRResNet Performanc0e Enhancement Using Patch Inputs and Partial Convolution-Based Padding,” Comput. Mater. Contin., vol. 74, no. 2, pp. 2999–3014, 2023. https://doi.org/10.32604/cmc.2023.032326
-SRRESNET : Ledig, Christian, et al. "Photo-Realistic Single Image Super-Resolution Using a Generative Adversarial Network." arXiv preprint arXiv:1609.04802 (2016).
