@@ -1,9 +1,9 @@
-PWD /home/adnane/Desktop/Satellite-Project/rapport
+PWD /home/adnane/Desktop/satellite-yasser-run/Satellite_Super_Resulotion0/rapport
 INPUT /etc/texmf/web2c/texmf.cnf
 INPUT /usr/share/texmf/web2c/texmf.cnf
 INPUT /usr/share/texlive/texmf-dist/web2c/texmf.cnf
 INPUT /var/lib/texmf/web2c/pdftex/pdflatex.fmt
-INPUT /home/adnane/Desktop/Satellite-Project/rapport/repport.tex
+INPUT /home/adnane/Desktop/satellite-yasser-run/Satellite_Super_Resulotion0/rapport/repport.tex
 OUTPUT repport.log
 INPUT /usr/share/texlive/texmf-dist/tex/latex/base/article.cls
 INPUT /usr/share/texlive/texmf-dist/tex/latex/base/article.cls
@@ -411,8 +411,23 @@ INPUT ./Architectures/Disc_diagram-Page-1.drawio (3).png
 INPUT ./Architectures/Disc_diagram-Page-1.drawio (3).png
 INPUT ./Architectures/Disc_diagram-Page-1.drawio (3).png
 INPUT ./Architectures/Disc_diagram-Page-1.drawio (3).png
+INPUT ./Architectures/MSRB.jpeg
+INPUT ./Architectures/MSRB.jpeg
+INPUT ./Architectures/MSRB.jpeg
+INPUT ./Architectures/MSRB.jpeg
+INPUT ./Architectures/MSRB.jpeg
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecrm0800.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecrm0600.tfm
+INPUT ./Architectures/laplacianfilter.jpeg
+INPUT ./Architectures/laplacianfilter.jpeg
+INPUT ./Architectures/laplacianfilter.jpeg
+INPUT ./Architectures/laplacianfilter.jpeg
+INPUT ./Architectures/laplacianfilter.jpeg
+INPUT ./Architectures/MSFSSR.jpeg
+INPUT ./Architectures/MSFSSR.jpeg
+INPUT ./Architectures/MSFSSR.jpeg
+INPUT ./Architectures/MSFSSR.jpeg
+INPUT ./Architectures/MSFSSR.jpeg
 INPUT ./Architectures/content_loss.png
 INPUT ./Architectures/content_loss.png
 INPUT ./Architectures/content_loss.png

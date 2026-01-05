@@ -559,7 +559,7 @@ To address these limitations, we propose \textbf{MSFSSR}, a \textit{Multi-Scale 
 To enrich early feature representations, MSFSSR uses a \textbf{Multi-Scale Residual Block (MSRB)}(site). Unlike conventional residual blocks that employ a single convolutional kernel size, the MSRB captures spatial information at multiple receptive fields using parallel convolutional operations.
   \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{Architectures/MSRB.png}
+    \includegraphics[width=0.8\textwidth]{Architectures/MSRB.jpeg}
     \caption{Architecture of MSRB}
     \label{fig:MSRB-architecture}
    \end{figure}
@@ -584,7 +584,7 @@ The low-frequency branch consists of a sequence of residual blocks that model la
 The Laplacian kernel is non-learnable, introducing an explicit inductive prior that enforces edge-aware feature extraction and improves training stability.
   \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{Architectures/laplacian filter.png}
+    \includegraphics[width=0.8\textwidth]{Architectures/laplacianfilter.jpeg}
     \caption{image after Laplacian filter}
     \label{fig:Laplacian-Img}
    \end{figure}
@@ -605,7 +605,7 @@ Through the combination of multi-scale spatial modeling, explicit frequency sepa
 
   \begin{figure}[H]
     \centering
-    \includegraphics[width=1\textwidth]{Architectures/MSFSSR.png}
+    \includegraphics[width=1\textwidth]{Architectures/MSFSSR.jpeg}
     \caption{General architecture of MSFSSR}
     \label{fig:MSFSSR-arch}
    \end{figure}

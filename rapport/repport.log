@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.12.15)  5 JAN 2026 18:19
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.12.15)  5 JAN 2026 18:35
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**/home/adnane/Desktop/Satellite-Project/rapport/repport.tex
-(/home/adnane/Desktop/Satellite-Project/rapport/repport.tex
+**/home/adnane/Desktop/satellite-yasser-run/Satellite_Super_Resulotion0/rapport/repport.tex
+(/home/adnane/Desktop/satellite-yasser-run/Satellite_Super_Resulotion0/rapport/repport.tex
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
@@ -981,7 +981,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has b
                    \relax 
 l.106 \newpage
                [1]
-/home/adnane/Desktop/Satellite-Project/rapport/repport.tex:122: Undefined control sequence.
+/home/adnane/Desktop/satellite-yasser-run/Satellite_Super_Resulotion0/rapport/repport.tex:122: Undefined control sequence.
 l.122 ...n representation. Let $I^{LR} \in \mathbb
                                                   {R}^{H \times W \times C}$...
 The control sequence at the end of the top line
@@ -990,7 +990,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/home/adnane/Desktop/Satellite-Project/rapport/repport.tex:122: Undefined control sequence.
+/home/adnane/Desktop/satellite-yasser-run/Satellite_Super_Resulotion0/rapport/repport.tex:122: Undefined control sequence.
 l.122 ...n satellite image and $I^{HR} \in \mathbb
                                                   {R}^{4H \times 4W \times C...
 The control sequence at the end of the top line
@@ -1055,7 +1055,7 @@ File: Architectures/edsr_architecture.png Graphic file (type png)
 Package pdftex.def Info: Architectures/edsr_architecture.png  used on input line 446.
 (pdftex.def)             Requested size: 318.66948pt x 195.51619pt.
  [11 <./Architectures/Residual_Block.png>]
-/home/adnane/Desktop/Satellite-Project/rapport/repport.tex:469: Undefined control sequence.
+/home/adnane/Desktop/satellite-yasser-run/Satellite_Super_Resulotion0/rapport/repport.tex:469: Undefined control sequence.
 l.469 \min_G \max_D \; \mathbb
                               {E}_{x \sim p_{data}(x)}[\log D(x)] + \mathbb{...
 The control sequence at the end of the top line
@@ -1064,7 +1064,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/home/adnane/Desktop/Satellite-Project/rapport/repport.tex:469: Undefined control sequence.
+/home/adnane/Desktop/satellite-yasser-run/Satellite_Super_Resulotion0/rapport/repport.tex:469: Undefined control sequence.
 l.469 ...{x \sim p_{data}(x)}[\log D(x)] + \mathbb
                                                   {E}_{z \sim p_z(z)}[\log (...
 The control sequence at the end of the top line
@@ -1079,7 +1079,7 @@ File: Architectures/GAN-architecture.png Graphic file (type png)
 Package pdftex.def Info: Architectures/GAN-architecture.png  used on input line 476.
 (pdftex.def)             Requested size: 364.19667pt x 163.51556pt.
 [12 <./Architectures/edsr_architecture.png>]
-/home/adnane/Desktop/Satellite-Project/rapport/repport.tex:485: Undefined control sequence.
+/home/adnane/Desktop/satellite-yasser-run/Satellite_Super_Resulotion0/rapport/repport.tex:485: Undefined control sequence.
 l.485 ...(x_r, x_f) = \sigma\left(D(x_r) - \mathbb
                                                   {E}_{x_f}[D(x_f)]\right)
 The control sequence at the end of the top line
@@ -1088,7 +1088,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/home/adnane/Desktop/Satellite-Project/rapport/repport.tex:488: Undefined control sequence.
+/home/adnane/Desktop/satellite-yasser-run/Satellite_Super_Resulotion0/rapport/repport.tex:488: Undefined control sequence.
 l.488 ...(x_f, x_r) = \sigma\left(D(x_f) - \mathbb
                                                   {E}_{x_r}[D(x_r)]\right)
 The control sequence at the end of the top line
@@ -1097,7 +1097,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/home/adnane/Desktop/Satellite-Project/rapport/repport.tex:495: Undefined control sequence.
+/home/adnane/Desktop/satellite-yasser-run/Satellite_Super_Resulotion0/rapport/repport.tex:495: Undefined control sequence.
 l.495 -\mathbb
               {E}_{x_r}[\log(1 - D_{Ra}(x_r, x_f))]
 The control sequence at the end of the top line
@@ -1106,7 +1106,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/home/adnane/Desktop/Satellite-Project/rapport/repport.tex:496: Undefined control sequence.
+/home/adnane/Desktop/satellite-yasser-run/Satellite_Super_Resulotion0/rapport/repport.tex:496: Undefined control sequence.
 l.496 -\mathbb
               {E}_{x_f}[\log(D_{Ra}(x_f, x_r))]
 The control sequence at the end of the top line
@@ -1136,98 +1136,65 @@ Overfull \hbox (35.52423pt too wide) in paragraph at lines 547--547
 []\T1/cmr/bx/n/14.4 MSFSSR : Multi-Scale and Frequency-Separated Super-Resolution
  []
 
-
-LaTeX Warning: File `Architectures/MSRB.png' not found on input line 562.
-
-
-/home/adnane/Desktop/Satellite-Project/rapport/repport.tex:562: Package pdftex.def Error: File `Architectures/MSRB.png' not found: using draft setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.562 ...th=0.8\textwidth]{Architectures/MSRB.png}
-                                                  
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-[15 <./Architectures/Disc_diagram-Page-1.drawio (3).png>] [16]
-
-LaTeX Warning: File `Architectures/laplacian filter.png' not found on input line 587.
-
-
-/home/adnane/Desktop/Satellite-Project/rapport/repport.tex:587: Package pdftex.def Error: File `Architectures/laplacian filter.png' not found: using draft setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.587 ...idth]{Architectures/laplacian filter.png}
-                                                  
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-[17]
-
-LaTeX Warning: File `Architectures/MSFSSR.png' not found on input line 608.
-
-
-/home/adnane/Desktop/Satellite-Project/rapport/repport.tex:608: Package pdftex.def Error: File `Architectures/MSFSSR.png' not found: using draft setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.608 ...th=1\textwidth]{Architectures/MSFSSR.png}
-                                                  
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-[18] [19]
-<Architectures/content_loss.png, id=201, 2209.25375pt x 799.98875pt>
+<Architectures/MSRB.jpeg, id=163, 1166.3575pt x 426.59375pt>
+File: Architectures/MSRB.jpeg Graphic file (type jpg)
+<use Architectures/MSRB.jpeg>
+Package pdftex.def Info: Architectures/MSRB.jpeg  used on input line 562.
+(pdftex.def)             Requested size: 364.19667pt x 133.19955pt.
+[15 <./Architectures/Disc_diagram-Page-1.drawio (3).png>]
+<Architectures/laplacianfilter.jpeg, id=174, 843.15pt x 391.4625pt>
+File: Architectures/laplacianfilter.jpeg Graphic file (type jpg)
+<use Architectures/laplacianfilter.jpeg>
+Package pdftex.def Info: Architectures/laplacianfilter.jpeg  used on input line 587.
+(pdftex.def)             Requested size: 364.19667pt x 169.09016pt.
+ [16 <./Architectures/MSRB.jpeg>]
+<Architectures/MSFSSR.jpeg, id=184, 1606.0pt x 596.2275pt>
+File: Architectures/MSFSSR.jpeg Graphic file (type jpg)
+<use Architectures/MSFSSR.jpeg>
+Package pdftex.def Info: Architectures/MSFSSR.jpeg  used on input line 608.
+(pdftex.def)             Requested size: 455.24411pt x 169.00774pt.
+ [17 <./Architectures/laplacianfilter.jpeg>]
+<Architectures/content_loss.png, id=192, 2209.25375pt x 799.98875pt>
 File: Architectures/content_loss.png Graphic file (type png)
 <use Architectures/content_loss.png>
 Package pdftex.def Info: Architectures/content_loss.png  used on input line 641.
 (pdftex.def)             Requested size: 409.71692pt x 148.3618pt.
+ [18 <./Architectures/MSFSSR.jpeg>]
 
+LaTeX Warning: Reference `fig:perceptualloss' on page 19 undefined on input line 647.
 
-LaTeX Warning: Reference `fig:perceptualloss' on page 20 undefined on input line 647.
+[19 <./Architectures/content_loss.png>]
 
-[20 <./Architectures/content_loss.png>]
+LaTeX Warning: Citation 'kingma2014adam' on page 20 undefined on input line 703.
 
-LaTeX Warning: Citation 'kingma2014adam' on page 21 undefined on input line 703.
-
-[21]
-<plots/stage-1.png, id=226, 875.1897pt x 379.4175pt>
+<plots/stage-1.png, id=217, 875.1897pt x 379.4175pt>
 File: plots/stage-1.png Graphic file (type png)
 <use plots/stage-1.png>
 Package pdftex.def Info: plots/stage-1.png  used on input line 718.
 (pdftex.def)             Requested size: 409.71692pt x 177.61993pt.
+[20]
 
+LaTeX Warning: Reference `fig:stage1' on page 21 undefined on input line 723.
 
-LaTeX Warning: Reference `fig:stage1' on page 22 undefined on input line 723.
-
-[22 <./plots/stage-1.png>]
-<plots/stage-2.png, id=237, 875.1897pt x 390.258pt>
+<plots/stage-2.png, id=227, 875.1897pt x 390.258pt>
 File: plots/stage-2.png Graphic file (type png)
 <use plots/stage-2.png>
 Package pdftex.def Info: plots/stage-2.png  used on input line 739.
 (pdftex.def)             Requested size: 455.24411pt x 202.99487pt.
+[21 <./plots/stage-1.png>]
 
+LaTeX Warning: Reference `fig:stage2' on page 22 undefined on input line 745.
 
-LaTeX Warning: Reference `fig:stage2' on page 23 undefined on input line 745.
-
-[23 <./plots/stage-2.png>]
-<plots/val_and_train_comparaison.png, id=245, 1395.2125pt x 592.2125pt>
+<plots/val_and_train_comparaison.png, id=237, 1395.2125pt x 592.2125pt>
 File: plots/val_and_train_comparaison.png Graphic file (type png)
 <use plots/val_and_train_comparaison.png>
 Package pdftex.def Info: plots/val_and_train_comparaison.png  used on input line 758.
 (pdftex.def)             Requested size: 455.24411pt x 193.23486pt.
+[22 <./plots/stage-2.png>]
 
+LaTeX Warning: Reference `fig:reconModels' on page 23 undefined on input line 763.
 
-LaTeX Warning: Reference `fig:reconModels' on page 24 undefined on input line 763.
-
-[24 <./plots/val_and_train_comparaison.png (PNG copy)>] [25] (./repport.aux)
+[23 <./plots/val_and_train_comparaison.png (PNG copy)>] (./repport.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
@@ -1257,18 +1224,18 @@ Package logreq Info: Writing requests to 'repport.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 33424 strings out of 474222
- 624525 string characters out of 5748732
- 1935975 words of memory out of 5000000
- 55098 multiletter control sequences out of 15000+600000
+ 33353 strings out of 474222
+ 622010 string characters out of 5748732
+ 1934975 words of memory out of 5000000
+ 55029 multiletter control sequences out of 15000+600000
  573910 words of font info for 68 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,9n,117p,1179b,1805s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 84i,9n,117p,1210b,1805s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1728.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx2488.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfcc1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfcc2074.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0800.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1728.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt1200.pfb>
-Output written on repport.pdf (26 pages, 7510677 bytes).
+Output written on repport.pdf (24 pages, 7742667 bytes).
 PDF statistics:
- 372 PDF objects out of 1000 (max. 8388607)
- 269 compressed objects within 3 object streams
- 114 named destinations out of 1000 (max. 500000)
- 98 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 366 PDF objects out of 1000 (max. 8388607)
+ 262 compressed objects within 3 object streams
+ 112 named destinations out of 1000 (max. 500000)
+ 113 words of extra memory for PDF output out of 10000 (max. 10000000)
 
