@@ -25,7 +25,7 @@ def calc_psnr(sr, hr):
 # TRAIN (avec AMP )
 def train_sr(model, train_loader, loss_fn, optimizer, device,
             scale_factor=4, model_requires_upscale=False,
-            scheduler=None, use_amp=False, scaler=None):
+            scheduler=None, use_amp=False, scaler=None,epoch = None):
 
     model.train()
     epoch_loss = 0.0
@@ -49,6 +49,7 @@ def train_sr(model, train_loader, loss_fn, optimizer, device,
 
         optimizer.zero_grad()
 
+            
         if use_amp:
             with autocast(device_type="cuda"):
                 sr = model(lr_in)
