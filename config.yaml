@@ -46,14 +46,12 @@ model:
   best_SRESNET_path: "src/models/checkpoints/SRESNET/best_SRESNET.pth"
   last_SRESNET_path: "src/models/checkpoints/SRESNET/last_SRESNET.pth"
   
-  best_custom_path: "src/models/checkpoints/custom/best_custom.pth"
-  last_custom_path: "src/models/checkpoints/custom/last_custom.pth"
 
-  best_custom_large_path: "src/models/checkpoints/custom_large/best_custom_large.pth"
-  last_custom_large_path: "src/models/checkpoints/custom_large/last_custom_large.pth"
+  best_MSFSSR_L1_path: "src/models/checkpoints/MSFSSR_L1/best_MSFSSR_L1.pth"
+  last_MSFSSR_L1_path: "src/models/checkpoints/MSFSSR_L1/last_MSFSSR_L1.pth"
 
-  best_custom_large2_path: "src/models/checkpoints/custom_large2/best_custom_large2.pth"
-  last_custom_large2_path: "src/models/checkpoints/custom_large2/last_custom_large2.pth"
+  best_MSFSSR_CUSTOM_path: "src/models/checkpoints/MSFSSR_CUSTOM/best_MSFSSR_CUSTOM.pth"
+  last_MSFSSR_CUSTOM_path: "src/models/checkpoints/MSFSSR_CUSTOM/last_MSFSSR_CUSTOM.pth"
 
 history:
   SRCNN_history_path: "src/models/checkpoints/SRCNN/srcnn_training_history.json" 
@@ -67,8 +65,6 @@ history:
 
   SRESNET_history_path : "src/models/checkpoints/SRESNET/srresnet.json"
 
-  custom_history_path : "src/models/checkpoints/custom/custom.json"
+  MSFSSR_L1_history_path : "src/models/checkpoints/MSFSSR_L1/MSFSSR_L1.json"
 
-  custom_large_history_path : "src/models/checkpoints/custom_large/custom_large.json"
-
-  custom_large2_history_path : "src/models/checkpoints/custom_large2/custom_large2.json"
+  MSFSSR_CUSTOM_history_path : "src/models/checkpoints/MSFSSR_CUSTOM/MSFSSR_CUSTOM.json"
