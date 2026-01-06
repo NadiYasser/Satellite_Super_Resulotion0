@@ -8,4 +8,4 @@ src/models/checkpoints/*/*.pth
 src/models/checkpoints/*/*.pth
 src/models/checkpoints/*/*/*.pth
 notebooks/yasser/__pycache__/custom_model.cpython-312.pyc
-MODEL_TEST
+MODEL_TEST  
