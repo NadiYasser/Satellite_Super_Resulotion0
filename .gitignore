@@ -5,5 +5,7 @@ data/preprocessed/
 src/models/__pycache__
 src/utils/__pycache__
 src/models/checkpoints/*/*.pth
+src/models/checkpoints/*/*.pth
+src/models/checkpoints/*/*/*.pth
 notebooks/yasser/__pycache__/custom_model.cpython-312.pyc
 MODEL_TEST
