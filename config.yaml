@@ -21,7 +21,7 @@ random_seed: 42
 training:
   batch_size: 64
   num_workers: 8
-  epochs: 70
+  epochs: 100
   lr: 0.0001
   weight_decay: 0.0
   scheduler_step_size: 20   # StepLR: tous les 20 epochs
@@ -52,6 +52,8 @@ model:
 
   best_MSFSSR_CUSTOM_path: "src/models/checkpoints/MSFSSR_CUSTOM/best_MSFSSR_CUSTOM.pth"
   last_MSFSSR_CUSTOM_path: "src/models/checkpoints/MSFSSR_CUSTOM/last_MSFSSR_CUSTOM.pth"
+
+
 
 history:
   SRCNN_history_path: "src/models/checkpoints/SRCNN/srcnn_training_history.json" 
